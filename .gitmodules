@@ -1,0 +1,12 @@
+[submodule "nvim/.local/share/nvim/site/pack/themes/opt/palenight.vim"]
+	path = nvim/.local/share/nvim/site/pack/themes/opt/palenight.vim
+	url = https://github.com/drewtempelmeyer/palenight.vim.git
+[submodule "nvim/.local/share/nvim/site/pack/themes/opt/gruvbox"]
+	path = nvim/.local/share/nvim/site/pack/themes/opt/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "nvim/.local/share/nvim/site/pack/themes/opt/molokai"]
+	path = nvim/.local/share/nvim/site/pack/themes/opt/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "nvim/.local/share/nvim/site/pack/themes/opt/material.vim"]
+	path = nvim/.local/share/nvim/site/pack/themes/opt/material.vim
+	url = https://github.com/kaicataldo/material.vim.git
