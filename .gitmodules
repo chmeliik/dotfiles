@@ -10,3 +10,18 @@
 [submodule "nvim/.local/share/nvim/site/pack/themes/opt/material.vim"]
 	path = nvim/.local/share/nvim/site/pack/themes/opt/material.vim
 	url = https://github.com/kaicataldo/material.vim.git
+[submodule "nvim/.local/share/nvim/site/pack/languages/start/Vim-Jinja2-Syntax"]
+	path = nvim/.local/share/nvim/site/pack/languages/start/Vim-Jinja2-Syntax
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "nvim/.local/share/nvim/site/pack/languages/start/python-syntax"]
+	path = nvim/.local/share/nvim/site/pack/languages/start/python-syntax
+	url = https://github.com/vim-python/python-syntax.git
+[submodule "nvim/.local/share/nvim/site/pack/tpope/start/vim-surround"]
+	path = nvim/.local/share/nvim/site/pack/tpope/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "nvim/.local/share/nvim/site/pack/tpope/start/vim-repeat"]
+	path = nvim/.local/share/nvim/site/pack/tpope/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "nvim/.local/share/nvim/site/pack/statusline/start/lightline.vim"]
+	path = nvim/.local/share/nvim/site/pack/statusline/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
