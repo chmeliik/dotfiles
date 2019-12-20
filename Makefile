@@ -1,9 +1,13 @@
 .PHONY: all
-all: nvim submodules
+all: nvim ranger submodules
 
 .PHONY: nvim
 nvim:
 	stow nvim
+
+.PHONY: ranger
+ranger:
+	stow ranger
 
 .PHONY: submodules
 submodules:
