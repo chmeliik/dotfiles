@@ -25,3 +25,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/statusline/start/lightline.vim"]
 	path = nvim/.local/share/nvim/site/pack/statusline/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "nvim/.local/share/nvim/site/pack/languages/start/emmet-vim"]
+	path = nvim/.local/share/nvim/site/pack/languages/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
