@@ -16,4 +16,4 @@ submodules:
 
 .PHONY: update-submodules
 update-submodules:
-	git submodule foreach git pull
+	git submodule update --remote
