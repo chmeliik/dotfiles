@@ -28,3 +28,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/languages/start/emmet-vim"]
 	path = nvim/.local/share/nvim/site/pack/languages/start/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "nvim/.local/share/nvim/site/pack/themes/opt/onedark.vim"]
+	path = nvim/.local/share/nvim/site/pack/themes/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
