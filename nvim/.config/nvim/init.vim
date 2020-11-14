@@ -20,5 +20,5 @@ set termguicolors   " truecolor support
 set noshowmode      " lightline does that for us
 
 source ~/.config/nvim/lightline.vim
-source ~/.config/nvim/themes/palenight.vim
+source ~/.config/nvim/themes/onedark.vim
 " }}}
