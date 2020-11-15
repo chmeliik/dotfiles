@@ -12,7 +12,6 @@ set softtabstop=-1      " <Tab> inserts $shiftwidth spaces
 set expandtab           " convert tabs to spaces
 
 set list                " show characters used for indentation
-set listchars+=space:.  " also show spaces (as dots)
 " }}}
 
 " Theming {{{
@@ -20,5 +19,5 @@ set termguicolors   " truecolor support
 set noshowmode      " lightline does that for us
 
 source ~/.config/nvim/lightline.vim
-source ~/.config/nvim/themes/onedark.vim
+source ~/.config/nvim/themes/molokai.vim
 " }}}
