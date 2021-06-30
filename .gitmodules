@@ -31,3 +31,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/themes/opt/onedark.vim"]
 	path = nvim/.local/share/nvim/site/pack/themes/opt/onedark.vim
 	url = https://github.com/joshdick/onedark.vim.git
+[submodule "nvim/.local/share/nvim/site/pack/languages/start/vim-toml"]
+	path = nvim/.local/share/nvim/site/pack/languages/start/vim-toml
+	url = https://github.com/cespare/vim-toml.git
