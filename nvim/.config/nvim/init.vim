@@ -19,5 +19,5 @@ set termguicolors   " truecolor support
 set noshowmode      " lightline does that for us
 
 source ~/.config/nvim/lightline.vim
-source ~/.config/nvim/themes/molokai.vim
+source ~/.config/nvim/themes/material.vim
 " }}}
