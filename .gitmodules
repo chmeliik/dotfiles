@@ -40,3 +40,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/languages/start/haskell-vim"]
 	path = nvim/.local/share/nvim/site/pack/languages/start/haskell-vim
 	url = https://github.com/neovimhaskell/haskell-vim.git
+[submodule "nvim/.local/share/nvim/site/pack/tpope/start/vim-commentary"]
+	path = nvim/.local/share/nvim/site/pack/tpope/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
