@@ -1,5 +1,5 @@
 .PHONY: all
-all: nvim ranger ghc submodules
+all: nvim ranger ghc kitty submodules
 
 .PHONY: nvim
 nvim:
