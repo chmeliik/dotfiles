@@ -1,3 +1,5 @@
+DISTRO := fedora
+
 .PHONY: all
 all: nvim ranger ghc kitty submodules
 
@@ -25,3 +27,7 @@ submodules:
 .PHONY: update-submodules
 update-submodules:
 	git submodule update --remote
+
+.PHONY: packages.txt
+packages.txt: packages/$(DISTRO).sed
+	cd packages && sed packages.conf -f uncomment.sed -f $(DISTRO).sed > ../packages.txt
