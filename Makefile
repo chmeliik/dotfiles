@@ -13,6 +13,10 @@ ranger:
 ghc:
 	stow ghc
 
+.PHONY: kitty
+kitty:
+	stow kitty
+
 .PHONY: submodules
 submodules:
 	git submodule init
