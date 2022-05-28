@@ -8,6 +8,7 @@ path=("$HOME/.local/bin" $path)
 
 source "$ZDOTDIR/history.zsh"
 source "$ZDOTDIR/keymap.zsh"
+source "$ZDOTDIR/git.zsh"
 
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
