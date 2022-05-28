@@ -26,4 +26,4 @@ compdef d=dirs
 export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore --exclude=.git'      # fuzzy insert
 export FZF_ALT_C_COMMAND='fd -t d --hidden --no-ignore --exclude=.git'  # fuzzy cd
 
-alias cdr='cd -- "$(git rev-parse --show-toplevel)"'  # cd to repo root
+alias grr='cd -- "$(git rev-parse --show-toplevel)"'  # go to repo root
