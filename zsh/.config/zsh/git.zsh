@@ -1,8 +1,8 @@
 function g() {
-    if [[ "$#" -eq 0 ]]; then
-        git status
-    else
+    if [[ $# -gt 0 ]]; then
         git "$@"
+    else
+        git status
     fi
 }
 compdef g=git
