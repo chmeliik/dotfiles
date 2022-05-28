@@ -4,7 +4,7 @@ return {
   color_scheme = "MaterialOcean",
 
   window_decorations = "NONE",
-  window_background_opacity = 0.95,
+  window_background_opacity = 0.9,
 
   inactive_pane_hsb = {
     brightness = 0.5,
