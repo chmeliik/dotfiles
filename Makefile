@@ -1,39 +1,12 @@
+STOW_PACKAGES := wezterm zsh starship bin nvim ranger ghc kitty
 DISTRO := fedora
 
 .PHONY: all
-all: bin zsh starship nvim ranger ghc kitty wezterm submodules
+all: stow submodules
 
-.PHONY: bin
-bin:
-	stow bin
-
-.PHONY: zsh
-zsh:
-	stow zsh
-
-.PHONY: starship
-starship:
-	stow starship
-
-.PHONY: nvim
-nvim:
-	stow nvim
-
-.PHONY: ranger
-ranger:
-	stow ranger
-
-.PHONY: ghc
-ghc:
-	stow ghc
-
-.PHONY: kitty
-kitty:
-	stow kitty
-
-.PHONY: wezterm
-wezterm:
-	stow wezterm
+.PHONY: stow
+stow:
+	stow $(STOW_PACKAGES)
 
 .PHONY: submodules
 submodules:
