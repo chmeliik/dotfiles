@@ -6,6 +6,8 @@ setopt no_beep
 
 path=("$HOME/.local/bin" $path)
 
+export WORDCHARS='-_'  # treat only alnum and '-_' as word chars
+
 source "$ZDOTDIR/history.zsh"
 source "$ZDOTDIR/keymap.zsh"
 source "$ZDOTDIR/git.zsh"
