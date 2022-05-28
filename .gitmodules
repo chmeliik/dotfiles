@@ -43,3 +43,9 @@
 [submodule "nvim/.local/share/nvim/site/pack/lsp/start/nvim-lspconfig"]
 	path = nvim/.local/share/nvim/site/pack/lsp/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "zsh/.config/zsh/plugins/zsh-autosuggestions"]
+	path = zsh/.config/zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/.config/zsh/plugins/fast-syntax-highlighting"]
+	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting

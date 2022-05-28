@@ -1,7 +1,11 @@
 DISTRO := fedora
 
 .PHONY: all
-all: nvim ranger ghc kitty wezterm submodules
+all: zsh nvim ranger ghc kitty wezterm submodules
+
+.PHONY: zsh
+zsh:
+	stow zsh
 
 .PHONY: nvim
 nvim:
