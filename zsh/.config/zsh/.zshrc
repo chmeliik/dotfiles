@@ -9,8 +9,14 @@ path=("$HOME/.local/bin" $path)
 source "$ZDOTDIR/history.zsh"
 source "$ZDOTDIR/keymap.zsh"
 source "$ZDOTDIR/git.zsh"
+source "$ZDOTDIR/navigation.zsh"
 
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 eval "$(starship init zsh)"
+
+[[ -f "/usr/share/fzf/shell/key-bindings.zsh" ]] && \
+    # set up fzf bindings for Ctrl-T, Ctrl-R, Alt-C (if found)
+    # do this after history.zsh to override Ctrl-R (the fzf version is superior)
+    source "/usr/share/fzf/shell/key-bindings.zsh"
