@@ -20,4 +20,7 @@ set noshowmode      " lightline does that for us
 
 source ~/.config/nvim/lightline.vim
 source ~/.config/nvim/themes/material.vim
+
+" this may interfere with opacity otherwise
+highlight Normal guibg=NONE
 " }}}
