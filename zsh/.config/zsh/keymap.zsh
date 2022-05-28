@@ -67,6 +67,8 @@ bindkey "${key[Shift-Tab]}" reverse-menu-complete
 
 bindkey "${key[Backspace]}"   backward-delete-char
 bindkey "${key[Delete]}"      delete-char
+
+bindkey "^W"                  backward-kill-word
 bindkey "${key[Ctrl-Delete]}" kill-word
 
 bindkey "${key[Ctrl-Left]}"  backward-word
