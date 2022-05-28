@@ -2,3 +2,4 @@
 truncation_length = 8
 truncate_to_repo = true
 repo_root_style = "italic purple"
+use_logical_path = false
