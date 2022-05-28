@@ -21,6 +21,7 @@ alias glg='git log'
 alias glgp='git log --patch'
 
 alias gst='git status'
+alias gsti='git status --ignored'
 alias gd='git diff'
 alias gds='git diff --staged'
 
