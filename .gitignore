@@ -1,0 +1,4 @@
+packages.txt
+
+zsh/.config/zsh/.*
+!zsh/.config/zsh/.zshrc
