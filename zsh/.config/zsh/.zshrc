@@ -13,6 +13,10 @@ source "$ZDOTDIR/git.zsh"
 source "$ZDOTDIR/navigation.zsh"
 source "$ZDOTDIR/completion.zsh"
 
+# use bat for colored manpages, see https://github.com/sharkdp/bat#man
+export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
+export MANROFFOPT="-c"
+
 # set up fzf bindings for Ctrl-T, Ctrl-R, Alt-C (if available)
 # do this after keymap.zsh to override Ctrl-R
 source "/usr/share/fzf/shell/key-bindings.zsh"
