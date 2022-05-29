@@ -52,3 +52,6 @@
 [submodule "bat/.config/bat/themes/vscode-themes"]
 	path = bat/.config/bat/themes/vscode-themes
 	url = https://github.com/microsoft/vscode-themes.git
+[submodule "zsh/.config/zsh/plugins/fzf-tab"]
+	path = zsh/.config/zsh/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab.git
