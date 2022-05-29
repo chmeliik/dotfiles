@@ -58,6 +58,8 @@ bindkey "${key[Down]}" down-line-or-beginning-search
 bindkey -M vicmd k     up-line-or-beginning-search
 bindkey -M vicmd j     down-line-or-beginning-search
 
+bindkey '^[.' insert-last-word
+
 bindkey '^R' history-incremental-pattern-search-backward
 
 bindkey "${key[Home]}" beginning-of-line
@@ -65,8 +67,8 @@ bindkey "${key[End]}"  end-of-line
 
 bindkey "${key[Shift-Tab]}" reverse-menu-complete
 
-bindkey "${key[Backspace]}"   backward-delete-char
-bindkey "${key[Delete]}"      delete-char
+bindkey "${key[Backspace]}" backward-delete-char
+bindkey "${key[Delete]}"    delete-char
 
 bindkey "^W"                  backward-kill-word
 bindkey "${key[Ctrl-Delete]}" kill-word
