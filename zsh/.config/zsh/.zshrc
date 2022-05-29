@@ -17,9 +17,12 @@ source "$ZDOTDIR/completion.zsh"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
 export MANROFFOPT="-c"
 
+function maybe_source() { [[ -e "$1" ]] && source "$1" }
+
 # set up fzf bindings for Ctrl-T, Ctrl-R, Alt-C (if available)
 # do this after keymap.zsh to override Ctrl-R
-source "/usr/share/fzf/shell/key-bindings.zsh"
+maybe_source "/usr/share/fzf/shell/key-bindings.zsh"
+maybe_source "/usr/share/fzf/key-bindings.zsh"
 export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore --exclude=.git'
 export FZF_ALT_C_COMMAND='fd -t d --hidden --no-ignore --exclude=.git'
 
