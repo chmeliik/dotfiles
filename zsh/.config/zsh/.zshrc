@@ -16,9 +16,10 @@ source "$ZDOTDIR/completion.zsh"
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
-eval "$(starship init zsh)"
+# set up fzf bindings for Ctrl-T, Ctrl-R, Alt-C (if available)
+# do this after keymap.zsh to override Ctrl-R
+source "/usr/share/fzf/shell/key-bindings.zsh"
+export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore --exclude=.git'
+export FZF_ALT_C_COMMAND='fd -t d --hidden --no-ignore --exclude=.git'
 
-[[ -f "/usr/share/fzf/shell/key-bindings.zsh" ]] && \
-    # set up fzf bindings for Ctrl-T, Ctrl-R, Alt-C (if found)
-    # do this after keymap.zsh to override Ctrl-R (the fzf version is superior)
-    source "/usr/share/fzf/shell/key-bindings.zsh"
+eval "$(starship init zsh)"

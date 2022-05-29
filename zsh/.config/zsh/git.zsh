@@ -43,3 +43,5 @@ alias gsts='git stash show --text'
 alias gstp='git stash pop'
 alias gstl='git stash list'
 alias gstd='git stash drop'
+
+alias grr='cd -- "$(git rev-parse --show-toplevel)"'  # go to repo root
