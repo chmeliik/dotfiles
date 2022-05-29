@@ -27,9 +27,11 @@ alias gds='git diff --staged'
 
 alias ga='git add'
 alias gau='git add --update'
+alias gaa='git add --all'
 alias gc='git commit'
 alias grb='git rebase'
 
+alias gcl='git clone'
 alias gr='git remote'
 alias gp='git push'
 alias gl='git pull'
