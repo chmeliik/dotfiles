@@ -20,5 +20,5 @@ eval "$(starship init zsh)"
 
 [[ -f "/usr/share/fzf/shell/key-bindings.zsh" ]] && \
     # set up fzf bindings for Ctrl-T, Ctrl-R, Alt-C (if found)
-    # do this after history.zsh to override Ctrl-R (the fzf version is superior)
+    # do this after keymap.zsh to override Ctrl-R (the fzf version is superior)
     source "/usr/share/fzf/shell/key-bindings.zsh"
