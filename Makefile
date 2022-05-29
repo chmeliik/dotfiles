@@ -1,4 +1,4 @@
-STOW_PACKAGES := wezterm zsh starship bin nvim ranger ghc kitty
+STOW_PACKAGES := wezterm zsh starship bin nvim bat ranger ghc kitty
 DISTRO := fedora
 
 .PHONY: all

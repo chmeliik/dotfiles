@@ -49,3 +49,6 @@
 [submodule "zsh/.config/zsh/plugins/fast-syntax-highlighting"]
 	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+[submodule "bat/.config/bat/themes/vscode-themes"]
+	path = bat/.config/bat/themes/vscode-themes
+	url = https://github.com/microsoft/vscode-themes.git

@@ -1,0 +1,5 @@
+# Material themes rule
+--theme="Material-Theme"
+
+# Use italic text
+--italic-text=always
