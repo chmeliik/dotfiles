@@ -1,5 +1,2 @@
-# Use an 8-bit theme to adapt to the terminal colorscheme
---theme="base16"
-
 # Use italic text
 --italic-text=always
