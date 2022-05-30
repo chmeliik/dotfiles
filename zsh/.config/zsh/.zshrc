@@ -26,8 +26,6 @@ maybe_source "/usr/share/fzf/key-bindings.zsh"
 export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore --exclude=.git'
 export FZF_ALT_C_COMMAND='fd -t d --hidden --no-ignore --exclude=.git'
 
-# note: fzf-tab must be sourced first, see https://github.com/Aloxaf/fzf-tab#install
-source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh"
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
