@@ -25,6 +25,9 @@ maybe_source "/usr/share/fzf/shell/key-bindings.zsh"
 maybe_source "/usr/share/fzf/key-bindings.zsh"
 export FZF_CTRL_T_COMMAND='fd --hidden'
 export FZF_ALT_C_COMMAND='fd -t d --hidden'
+# set up fzf completion (triggered by **)
+maybe_source "/usr/share/zsh/site-functions/fzf"
+maybe_source "/usr/share/fzf/completion.zsh"
 
 source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
