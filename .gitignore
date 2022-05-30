@@ -2,3 +2,7 @@ packages.txt
 
 zsh/.config/zsh/.*
 !zsh/.config/zsh/.zshrc
+
+nvim/.local/share/nvim/.netrwhist
+nvim/.local/share/nvim/shada
+nvim/.local/share/nvim/swap
