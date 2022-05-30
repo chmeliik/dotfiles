@@ -1,5 +1,10 @@
 [directory]
 truncation_length = 8
 truncate_to_repo = true
-repo_root_style = "italic purple"
+style = "bold blue"
+repo_root_style = "underline italic blue"
 use_logical_path = false
+
+[git_status]
+format = '([\[$conflicted$deleted$renamed$modified$staged\]]($style) )'
+ignore_submodules = true
