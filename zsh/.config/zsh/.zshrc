@@ -15,6 +15,7 @@ source "$ZDOTDIR/keymap.zsh"
 source "$ZDOTDIR/git.zsh"
 source "$ZDOTDIR/navigation.zsh"
 source "$ZDOTDIR/completion.zsh"
+source "$ZDOTDIR/p10k.zsh"
 # ------------------------------------------------------------------------------
 
 # --- bat integration ----------------------------------------------------------
@@ -42,6 +43,5 @@ export FZF_ALT_C_COMMAND='fd -t d --hidden'
 PLUGINS="$ZDOTDIR/plugins"
 source "$PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$PLUGINS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "$PLUGINS/powerlevel10k/powerlevel10k.zsh-theme"
 # ------------------------------------------------------------------------------
-
-eval "$(starship init zsh)"
