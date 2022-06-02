@@ -17,8 +17,8 @@ function git-main() {
 }
 
 alias gsh='git show'
-alias glg='git log'
-alias glgp='git log --patch'
+alias glg='git log --stat'
+alias glgp='git log --stat --patch'
 
 alias gst='git status'
 alias gsti='git status --ignored'
