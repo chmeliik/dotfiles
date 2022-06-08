@@ -16,15 +16,10 @@ export WORDCHARS='-_'  # treat only alnum and '-_' as word chars
 source "$ZDOTDIR/history.zsh"
 source "$ZDOTDIR/keymap.zsh"
 source "$ZDOTDIR/git.zsh"
+source "$ZDOTDIR/bat.zsh"
 source "$ZDOTDIR/navigation.zsh"
 source "$ZDOTDIR/completion.zsh"
 source "$ZDOTDIR/p10k.zsh"
-# ------------------------------------------------------------------------------
-
-# --- bat integration ----------------------------------------------------------
-# use bat for colored manpages, see https://github.com/sharkdp/bat#man
-export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
-export MANROFFOPT="-c"
 # ------------------------------------------------------------------------------
 
 # --- fzf integration ----------------------------------------------------------
