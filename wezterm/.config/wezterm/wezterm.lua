@@ -3,6 +3,11 @@ local wezterm = require 'wezterm'
 return {
   color_scheme = "MaterialOcean",
 
+  font = wezterm.font_with_fallback({
+    "JetBrains Mono",
+    "Symbola",  -- has the ⇡ and ⇣ glyphs
+  }),
+
   window_decorations = "NONE",
   window_background_opacity = 0.9,
 
