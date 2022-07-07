@@ -1,0 +1,15 @@
+[user]
+	name = Adam Cmiel
+	email = acmiel@redhat.com
+	signingkey = 41F0E8A87901CF72
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[pager]
+	branch = false
+[pull]
+	rebase = true
+[alias]
+	mr = !sh -c 'git fetch -f upstream merge-requests/$1/head:$1' -
+	pr = !sh -c 'git fetch -f upstream pull/$1/head:$1' -
