@@ -12,7 +12,7 @@ function git-main() {
     if name=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null); then
         cut -c 8- <<< "$name"
     else
-        git config --get init.defaultBranch || echo master
+        git config --get init.defaultBranch || echo main
     fi
 }
 
