@@ -33,4 +33,6 @@ return {
     {key="UpArrow", mods="SHIFT", action=wezterm.action{ScrollByLine=-1}},
     {key="DownArrow", mods="SHIFT", action=wezterm.action{ScrollByLine=1}},
   },
+
+  warn_about_missing_glyphs=false,
 }
