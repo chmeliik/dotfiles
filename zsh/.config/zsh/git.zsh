@@ -7,15 +7,6 @@ function g() {
 }
 compdef g=git
 
-function git-main() {
-    local name
-    if name=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null); then
-        cut -c 8- <<< "$name"
-    else
-        git config --get init.defaultBranch || echo main
-    fi
-}
-
 alias gsh='git show'
 alias glg='git log --stat'
 alias glgp='git log --stat --patch'
@@ -35,7 +26,7 @@ alias gcl='git clone'
 alias gr='git remote'
 alias gp='git push'
 alias gl='git pull'
-alias glum='git pull upstream $(git-main)'
+alias glub='git pull upstream $(git rev-parse --abbrev-ref HEAD)'
 
 alias gb='git branch'
 alias gco='git checkout'
