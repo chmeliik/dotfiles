@@ -24,6 +24,7 @@ packages.txt: packages/$(DISTRO).sed
 .PHONY: nerdfonts
 .ONESHELL:
 nerdfonts:
+	set -o errexit
 	git clone https://github.com/ryanoasis/nerd-fonts.git /tmp/nerd-fonts \
 		--no-checkout --single-branch --depth 1 --filter blob:none
 	trap 'rm -rf /tmp/nerd-fonts' EXIT
