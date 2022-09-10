@@ -26,6 +26,7 @@ cd "$dotfiles_dir"
 
 mapfile -t paths_to_watch < <(
     fd '.*' -e j2 --hidden
+    fd '.*' -t f envs/
     fd 'localenv.yaml' --no-ignore
 )
 
