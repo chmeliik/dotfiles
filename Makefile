@@ -54,13 +54,13 @@ nerdfonts:
 ### Templating
 
 .PHONY: templates
-templates: localenv.yaml
-	fd --hidden -e j2 -x bash -c 'jinja2 --strict {} localenv.yaml -o {.} && echo {.}'
+templates: .env
+	fd --hidden -e j2 -x bash -c 'jinja2 --format=env --strict {} .env -o {.} && echo {.}'
 
-localenv.yaml:
+.env:
 	@fd . envs -t f \
 	| fzf \
 		--preview='bat -p --color=always {}' \
 		--height=20 \
 		--prompt='choose environment> ' \
-	| xargs -I{} ln -sf {} localenv.yaml
+	| xargs -I{} ln -sf {} .env
