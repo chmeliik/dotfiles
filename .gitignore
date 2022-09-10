@@ -1,4 +1,7 @@
 packages.txt
+localenv.yaml
+
+git/.gitconfig
 
 zsh/.config/zsh/.*
 !zsh/.config/zsh/.zshrc

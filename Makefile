@@ -4,9 +4,21 @@ DISTRO := fedora
 .PHONY: all
 all: stow submodules nerdfonts
 
+.PHONY: templates
+templates: localenv.yaml
+	fd --hidden -e j2 -x jinja2 {} localenv.yaml -o {.}
+
+localenv.yaml:
+	@fd . envs -t f \
+	| fzf \
+		--preview='bat -p --color=always {}' \
+		--height=20 \
+		--prompt='choose environment> ' \
+	| xargs -I{} ln -sf {} localenv.yaml
+
 .PHONY: stow
-stow:
-	stow $(STOW_PACKAGES)
+stow: templates
+	stow $(STOW_PACKAGES) --ignore='\.j2'
 
 .PHONY: submodules
 submodules:
