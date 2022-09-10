@@ -1,43 +1,42 @@
-STOW_PACKAGES := wezterm zsh starship bin nvim bat ranger ghc kitty git
+CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git
 DISTRO := fedora
 
+### Main
+
+.PHONY: main
+main: configs scripts submodules
+
 .PHONY: all
-all: stow submodules nerdfonts
+all: main dotfile-watcher nerdfonts
 
-.PHONY: templates
-templates: localenv.yaml
-	fd --hidden -e j2 -x bash -c 'jinja2 --strict {} localenv.yaml -o {.} && echo {.}'
+.PHONY: configs
+configs: templates
+	stow $(CONFIG_DIRS) --ignore='\.j2'
 
-localenv.yaml:
-	@fd . envs -t f \
-	| fzf \
-		--preview='bat -p --color=always {}' \
-		--height=20 \
-		--prompt='choose environment> ' \
-	| xargs -I{} ln -sf {} localenv.yaml
-
-.PHONY: dotfile-watcher
-dotfile-watcher: templates
-	stow bin dotfile-watcher
-	systemctl --user enable dotfile-watcher.service
-	systemctl --user restart dotfile-watcher.service
-
-.PHONY: stow
-stow: dotfile-watcher
-	stow $(STOW_PACKAGES) --ignore='\.j2'
+.PHONY: scripts
+scripts:
+	stow bin
 
 .PHONY: submodules
 submodules:
 	git submodule init
 	git submodule update
 
-.PHONY: update-submodules
-update-submodules:
-	git submodule update --remote
+### Situational
 
 .PHONY: packages.txt
 packages.txt: packages/$(DISTRO).sed
 	cd packages && sed packages.conf -f uncomment.sed -f $(DISTRO).sed > ../packages.txt
+
+.PHONY: update-submodules
+update-submodules:
+	git submodule update --remote
+
+.PHONY: dotfile-watcher
+dotfile-watcher: scripts templates
+	stow dotfile-watcher
+	systemctl --user enable dotfile-watcher.service
+	systemctl --user restart dotfile-watcher.service
 
 .PHONY: nerdfonts
 .ONESHELL:
@@ -51,3 +50,17 @@ nerdfonts:
 	git sparse-checkout set patched-fonts/JetBrainsMono
 	git checkout
 	./install.sh JetBrainsMono
+
+### Templating
+
+.PHONY: templates
+templates: localenv.yaml
+	fd --hidden -e j2 -x bash -c 'jinja2 --strict {} localenv.yaml -o {.} && echo {.}'
+
+localenv.yaml:
+	@fd . envs -t f \
+	| fzf \
+		--preview='bat -p --color=always {}' \
+		--height=20 \
+		--prompt='choose environment> ' \
+	| xargs -I{} ln -sf {} localenv.yaml
