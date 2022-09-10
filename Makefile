@@ -33,11 +33,6 @@ package-list: packages/$(DISTRO).sed
 update-submodules:
 	git submodule update --remote
 
-.PHONY: dotfile-watcher
-dotfile-watcher: scripts templates
-	stow dotfile-watcher
-	systemctl --user enable dotfile-watcher.path --now
-
 .PHONY: nerdfonts
 .ONESHELL:
 nerdfonts:
@@ -65,3 +60,8 @@ choose-env:
 		--height=20 \
 		--prompt='choose environment> ' \
 	| xargs -I{} ln -sf {} .env
+
+.PHONY: dotfile-watcher
+dotfile-watcher:
+	stow dotfile-watcher
+	systemctl --user enable dotfile-watcher.path --now
