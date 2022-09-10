@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git
 DISTRO := fedora
 
@@ -40,7 +41,7 @@ dotfile-watcher: scripts templates
 .PHONY: nerdfonts
 .ONESHELL:
 nerdfonts:
-	set -o errexit
+	set -o errexit -o nounset -o pipefail
 	git clone https://github.com/ryanoasis/nerd-fonts.git /tmp/nerd-fonts \
 		--no-checkout --single-branch --depth 1 --filter blob:none
 	trap 'rm -rf /tmp/nerd-fonts' EXIT
