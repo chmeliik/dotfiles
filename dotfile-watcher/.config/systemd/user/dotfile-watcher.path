@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch dotfiles directory for changes
+
+[Path]
+PathChanged=%h/dotfiles/.env
+PathChanged=%h/dotfiles/envs
+PathChanged=%h/dotfiles/git
+
+[Install]
+WantedBy=default.target

@@ -35,8 +35,7 @@ update-submodules:
 .PHONY: dotfile-watcher
 dotfile-watcher: scripts templates
 	stow dotfile-watcher
-	systemctl --user enable dotfile-watcher.service
-	systemctl --user restart dotfile-watcher.service
+	systemctl --user enable dotfile-watcher.path --now
 
 .PHONY: nerdfonts
 .ONESHELL:

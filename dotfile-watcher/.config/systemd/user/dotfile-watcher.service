@@ -1,9 +1,7 @@
 [Unit]
-Description=Dotfile watcher
+Description=Regenerate templates
 
 [Service]
-ExecStart=%h/.local/bin/watch-dotfiles.sh
-Restart=always
-
-[Install]
-WantedBy=default.target
+Type=oneshot
+WorkingDirectory=%h/dotfiles
+ExecStart=/usr/bin/make templates
