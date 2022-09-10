@@ -27,7 +27,7 @@ submodules:
 
 .PHONY: package-list
 package-list: packages/$(DISTRO).sed
-	@cd packages && sed packages.conf -f uncomment.sed -f $(DISTRO).sed
+	@cd packages && sed packages.txt -f uncomment.sed -f $(DISTRO).sed
 
 .PHONY: update-submodules
 update-submodules:
