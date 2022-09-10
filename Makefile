@@ -57,7 +57,8 @@ nerdfonts:
 templates: .env
 	fd --hidden -e j2 -x bash -c 'jinja2 --format=env --strict {} .env -o {.} && echo {.}'
 
-.env:
+.PHONY: choose-env
+choose-env:
 	@fd . envs -t f \
 	| fzf \
 		--preview='bat -p --color=always {}' \

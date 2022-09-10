@@ -13,15 +13,15 @@ jetbrains-mono-fonts
 zsh
 
 # TUIs
-fzf  # (also a builddep)
+fzf
 ncdu
 neovim
 ranger
 
 # coreutils replacements
-bat  # (also a builddep)
+bat
 exa
-fd  # (also a builddep)
+fd
 ripgrep
 git-delta
 
