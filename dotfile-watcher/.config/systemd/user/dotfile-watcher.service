@@ -1,0 +1,9 @@
+[Unit]
+Description=Dotfile watcher
+
+[Service]
+ExecStart=%h/.local/bin/watch-dotfiles.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

@@ -6,7 +6,7 @@ all: stow submodules nerdfonts
 
 .PHONY: templates
 templates: localenv.yaml
-	fd --hidden -e j2 -x jinja2 {} localenv.yaml -o {.}
+	fd --hidden -e j2 -x bash -c 'jinja2 --strict {} localenv.yaml -o {.} && echo {.}'
 
 localenv.yaml:
 	@fd . envs -t f \
@@ -16,8 +16,14 @@ localenv.yaml:
 		--prompt='choose environment> ' \
 	| xargs -I{} ln -sf {} localenv.yaml
 
+.PHONY: dotfile-watcher
+dotfile-watcher: templates
+	stow bin dotfile-watcher
+	systemctl --user enable dotfile-watcher.service
+	systemctl --user restart dotfile-watcher.service
+
 .PHONY: stow
-stow: templates
+stow: dotfile-watcher
 	stow $(STOW_PACKAGES) --ignore='\.j2'
 
 .PHONY: submodules
