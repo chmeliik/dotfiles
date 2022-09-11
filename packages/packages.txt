@@ -3,7 +3,7 @@
 git
 make
 stow
-python-jinja
+gettext
 
 # terminal
 kitty

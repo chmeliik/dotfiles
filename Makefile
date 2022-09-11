@@ -12,7 +12,7 @@ all: main dotfile-watcher nerdfonts
 
 .PHONY: configs
 configs: templates
-	stow $(CONFIG_DIRS) --ignore='\.j2'
+	stow $(CONFIG_DIRS) --ignore='\.template'
 
 .PHONY: scripts
 scripts:
@@ -54,8 +54,8 @@ nerdfonts:
 ### Templating
 
 .PHONY: templates
-templates: .env
-	fd --hidden -e j2 -x bash -c 'jinja2 --format=env --strict {} .env -o {.} && echo {.}'
+templates: .env scripts
+	source .env && fd --hidden -e template -x ~/.local/bin/render-env.sh {}
 
 .PHONY: choose-env
 choose-env:
