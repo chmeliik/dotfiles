@@ -1,6 +1,6 @@
 SHELL := /bin/bash
-CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git
 DISTRO := fedora
+CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git
 
 ### Main
 
@@ -26,8 +26,13 @@ submodules:
 ### Situational
 
 .PHONY: package-list
-package-list: packages/$(DISTRO).sed
-	@cd packages && sed packages.txt -f uncomment.sed -f $(DISTRO).sed
+package-list:
+	@if [[ ! -e packages/$(DISTRO).sed ]]; then \
+		echo 'Warning: unknown distro, will try anyway' >&2 && \
+		cd packages && sed packages.txt -f uncomment.sed; \
+	else \
+		cd packages && sed packages.txt -f uncomment.sed -f $(DISTRO).sed; \
+	fi
 
 .PHONY: update-submodules
 update-submodules:
