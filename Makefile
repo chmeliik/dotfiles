@@ -1,5 +1,4 @@
 SHELL := /bin/bash
-DISTRO := fedora
 CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git
 
 ### Main
@@ -29,12 +28,17 @@ submodules:
 ### Situational
 
 .PHONY: package-list
+.ONESHELL:
 package-list:
-	@if [[ ! -e packages/$(DISTRO).sed ]]; then \
+	@set -o errexit -o nounset -o pipefail
+	@source /etc/os-release || :
+	@distro=$${ID:-unknown}
+	@echo "Distro detection: $$distro" >&2
+	@if [[ ! -e "packages/$$distro.sed" ]]; then \
 		echo 'Warning: unknown distro, will try anyway' >&2 && \
 		cd packages && sed packages.txt -f uncomment.sed; \
 	else \
-		cd packages && sed packages.txt -f uncomment.sed -f $(DISTRO).sed; \
+		cd packages && sed packages.txt -f uncomment.sed -f "$$distro.sed"; \
 	fi
 
 .PHONY: update-submodules
