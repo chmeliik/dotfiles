@@ -40,7 +40,7 @@ export FZF_ALT_C_COMMAND='fd -t d --hidden'
 # --- plugins ------------------------------------------------------------------
 PLUGINS="$ZDOTDIR/plugins"
 # fzf-tab must be sourced first, see https://github.com/Aloxaf/fzf-tab#install
-source "$ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh"
+source "$PLUGINS/fzf-tab/fzf-tab.plugin.zsh"
 source "$PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$PLUGINS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 source "$PLUGINS/powerlevel10k/powerlevel10k.zsh-theme"

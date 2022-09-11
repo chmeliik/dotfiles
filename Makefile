@@ -61,7 +61,7 @@ templates: .env scripts
 choose-env:
 	@fd . envs -t f \
 	| fzf \
-		--preview='bat -p --color=always {}' \
+		--preview='bat -p --color always {} --line-range :50' \
 		--height=20 \
 		--prompt='choose environment> ' \
 	| xargs -I{} ln -sf {} .env

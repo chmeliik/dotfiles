@@ -1,2 +1,4 @@
 # Use italic text
 --italic-text=always
+--map-syntax '*.env:DotENV'
+--ignored-suffix '.template'
