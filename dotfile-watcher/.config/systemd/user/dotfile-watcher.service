@@ -5,5 +5,5 @@ Description=Regenerate templates
 Type=oneshot
 WorkingDirectory=%h/dotfiles
 ExecStart=/usr/bin/make templates
-ExecStartPost=/usr/bin/notify-send "Dotfile watcher" "Generated successfully 🎉"
-ExecStopPost=/bin/bash -c 'if [[ "$SERVICE_RESULT" != success ]]; then notify-send "Dotfile watcher" "Failed to generate 😢"; fi'
+ExecStartPost=/usr/bin/notify-send --transient "Dotfile watcher" "Generated successfully 🎉"
+ExecStopPost=/bin/bash -c 'if [[ "$SERVICE_RESULT" != success ]]; then notify-send --transient "Dotfile watcher" "Failed to generate 😢"; fi'
