@@ -1,19 +1,19 @@
 # vim: ft=gitconfig
 [user]
-	name = {{ git_user_name }}
-	email = {{ git_user_email }}
-	signingkey = {{ git_user_signingkey }}
-[commit]
-	gpgsign = true
-[pager]
-	branch = false
-[pull]
-	rebase = true
-[alias]
-	mr = !sh -c 'git fetch -f upstream merge-requests/$1/head:$1' -
-	pr = !sh -c 'git fetch -f upstream pull/$1/head:$1' -
+    name = {{ git_user_name }}
+    email = {{ git_user_email }}
+    signingkey = {{ git_user_signingkey }}
 
-# Delta
+[alias]
+    pr = !sh -c 'git fetch -f upstream "pull/$1/head:$1"' -
+    mr = !sh -c 'git fetch -f upstream "merge-requests/$1/head:$1"' -
+
+[commit]
+    gpgsign = true
+
+[pull]
+    rebase = true
+
 [core]
     pager = delta
 
@@ -22,12 +22,10 @@
 
 [delta]
     features = decorations line-numbers side-by-side
-
 [delta "decorations"]
     file-style = omit
     hunk-header-decoration-style = box ul
     hunk-header-style = file syntax
-
 [delta "line-numbers"]
     line-numbers-left-style = auto
     line-numbers-right-style = auto
