@@ -16,6 +16,9 @@ configs: templates
 
 .PHONY: scripts
 scripts:
+	mkdir -p ~/.local/bin
+	# symlink instead of alias, so that you can do stuff like fd <pattern> -X vim
+	ln -sf $(shell command -v nvim) ~/.local/bin/vim
 	stow bin
 
 .PHONY: submodules
@@ -54,8 +57,8 @@ nerdfonts:
 ### Templating
 
 .PHONY: templates
-templates: .env scripts
-	source .env && fd --hidden -e template -x ~/.local/bin/render-env.sh {}
+templates: .env
+	source .env && fd --hidden -e template -x bin/.local/bin/render-env.sh {}
 
 .PHONY: choose-env
 choose-env:
