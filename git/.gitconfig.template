@@ -21,11 +21,4 @@
     diffFilter = delta --color-only --features=interactive
 
 [delta]
-    features = decorations line-numbers side-by-side
-[delta "decorations"]
-    file-style = omit
-    hunk-header-decoration-style = box ul
-    hunk-header-style = file syntax
-[delta "line-numbers"]
-    line-numbers-left-style = auto
-    line-numbers-right-style = auto
+    features = decorations line-numbers
