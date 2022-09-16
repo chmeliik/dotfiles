@@ -1,57 +1,76 @@
 [submodule "nvim/.local/share/nvim/site/pack/themes/opt/palenight.vim"]
 	path = nvim/.local/share/nvim/site/pack/themes/opt/palenight.vim
 	url = https://github.com/drewtempelmeyer/palenight.vim.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/themes/opt/gruvbox"]
 	path = nvim/.local/share/nvim/site/pack/themes/opt/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/themes/opt/molokai"]
 	path = nvim/.local/share/nvim/site/pack/themes/opt/molokai
 	url = https://github.com/tomasr/molokai.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/themes/opt/material.vim"]
 	path = nvim/.local/share/nvim/site/pack/themes/opt/material.vim
 	url = https://github.com/kaicataldo/material.vim.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/languages/start/Vim-Jinja2-Syntax"]
 	path = nvim/.local/share/nvim/site/pack/languages/start/Vim-Jinja2-Syntax
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/languages/start/python-syntax"]
 	path = nvim/.local/share/nvim/site/pack/languages/start/python-syntax
 	url = https://github.com/vim-python/python-syntax.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/tpope/start/vim-surround"]
 	path = nvim/.local/share/nvim/site/pack/tpope/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/tpope/start/vim-repeat"]
 	path = nvim/.local/share/nvim/site/pack/tpope/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/statusline/start/lightline.vim"]
 	path = nvim/.local/share/nvim/site/pack/statusline/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/themes/opt/onedark.vim"]
 	path = nvim/.local/share/nvim/site/pack/themes/opt/onedark.vim
 	url = https://github.com/joshdick/onedark.vim.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/languages/start/vim-toml"]
 	path = nvim/.local/share/nvim/site/pack/languages/start/vim-toml
 	url = https://github.com/cespare/vim-toml.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/languages/start/vim-racket"]
 	path = nvim/.local/share/nvim/site/pack/languages/start/vim-racket
 	url = https://github.com/wlangstroth/vim-racket.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/languages/start/haskell-vim"]
 	path = nvim/.local/share/nvim/site/pack/languages/start/haskell-vim
 	url = https://github.com/neovimhaskell/haskell-vim.git
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/tpope/start/vim-commentary"]
 	path = nvim/.local/share/nvim/site/pack/tpope/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+	shallow = true
 [submodule "nvim/.local/share/nvim/site/pack/lsp/start/nvim-lspconfig"]
 	path = nvim/.local/share/nvim/site/pack/lsp/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
+	shallow = true
 [submodule "zsh/.config/zsh/plugins/zsh-autosuggestions"]
 	path = zsh/.config/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+	shallow = true
 [submodule "zsh/.config/zsh/plugins/fast-syntax-highlighting"]
 	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+	shallow = true
 [submodule "zsh/.config/zsh/plugins/powerlevel10k"]
 	path = zsh/.config/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+	shallow = true
 [submodule "zsh/.config/zsh/plugins/fzf-tab"]
 	path = zsh/.config/zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+	shallow = true
