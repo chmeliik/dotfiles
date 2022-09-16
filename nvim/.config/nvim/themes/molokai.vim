@@ -2,6 +2,6 @@
 
 packadd! molokai
 
-let g:lightline.colorscheme = 'molokai'
+let g:lightline = { 'colorscheme': 'molokai' }
 
 colorscheme molokai

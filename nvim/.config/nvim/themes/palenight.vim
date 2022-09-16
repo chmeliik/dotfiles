@@ -3,6 +3,6 @@
 packadd! palenight.vim
 
 let g:palenight_terminal_italics = 1
-let g:lightline.colorscheme = 'palenight'
+let g:lightline = { 'colorscheme': 'palenight' }
 
 colorscheme palenight
