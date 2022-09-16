@@ -22,3 +22,5 @@
 
 [delta]
     features = decorations line-numbers
+    file-style = purple
+    file-decoration-style = purple ul
