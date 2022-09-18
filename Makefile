@@ -4,7 +4,7 @@ CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git
 ### Main
 
 .PHONY: main
-main: configs scripts submodules
+main: configs scripts zsh-plugins vim-plugins
 
 .PHONY: all
 all: main dotfile-watcher nerdfonts
@@ -20,10 +20,29 @@ scripts:
 	ln -sf $(shell command -v nvim) ~/.local/bin/vim
 	stow bin
 
-.PHONY: submodules
-submodules:
-	git submodule init
-	git submodule update
+.PHONY: zsh-plugins
+zsh-plugins:
+	git submodule init -- zsh/
+	git submodule update -- zsh/
+
+.PHONY: vim-plugins
+vim-plugins:
+	git submodule init -- nvim/
+	git submodule update -- nvim/
+	nvim --headless -c 'PackerInstall' -c 'autocmd User PackerComplete quitall' 
+
+### Updating
+
+.PHONY: update
+update: update-zsh-plugins update-vim-plugins
+
+.PHONY: update-zsh-plugins
+update-zsh-plugins:
+	git submodule update --remote -- zsh/
+
+.PHONY: update-vim-plugins
+update-vim-plugins:
+	nvim -c 'PackerSync' -c 'autocmd WinClosed * quitall' 
 
 ### Situational
 
@@ -40,10 +59,6 @@ package-list:
 	else \
 		cd packages && sed packages.txt -f uncomment.sed -f "$$distro.sed"; \
 	fi
-
-.PHONY: update-submodules
-update-submodules:
-	git submodule update --remote
 
 .PHONY: nerdfonts
 .ONESHELL:
