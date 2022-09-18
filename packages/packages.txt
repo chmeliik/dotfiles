@@ -4,6 +4,7 @@ git
 make
 stow
 gettext
+gcc-c++
 
 # terminal
 kitty
