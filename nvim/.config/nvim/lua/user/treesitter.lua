@@ -5,7 +5,10 @@ local function setup()
       enable = true,
       disable = { "make" },
     },
-    indent = { enable = true },
+    indent = {
+      enable = true,
+      disable = { "python" },
+    },
   }
 end
 
