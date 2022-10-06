@@ -3,7 +3,7 @@ local function setup()
     auto_install = true,
     highlight = {
       enable = true,
-      disable = { "make" },
+      disable = { "make", "help" },
     },
     indent = {
       enable = true,
