@@ -39,7 +39,7 @@ local function setup()
     use {
       "nvim-telescope/telescope.nvim",
       branch = "0.1.x",
-      requires = { "nvim-lua/plenary.nvim" }
+      requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons" }
     }
   end)
 end
