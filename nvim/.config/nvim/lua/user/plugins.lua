@@ -34,6 +34,13 @@ local function setup()
         require("nvim-treesitter.install").update({ with_sync = true })
       end,
     }
+
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use {
+      "nvim-telescope/telescope.nvim",
+      branch = "0.1.x",
+      requires = { "nvim-lua/plenary.nvim" }
+    }
   end)
 end
 
