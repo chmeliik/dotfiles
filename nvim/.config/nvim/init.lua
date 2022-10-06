@@ -2,7 +2,8 @@ require("user.opts")
 require("user.keymap")
 require("user.indentation")
 
-pcall(require("user.plugins").setup)
-pcall(require("user.treesitter").setup)
-pcall(require("user.telescope").setup)
-pcall(require("user.colorscheme").set, "material")
+pcall(require, "user.plugins")
+
+pcall(require, "user.colorscheme")
+pcall(require, "user.telescope")
+pcall(require, "user.treesitter")
