@@ -22,6 +22,8 @@ packer.startup(function(use)
   use "wbthomason/packer.nvim"
 
   use "kaicataldo/material.vim"
+  use "rebelot/kanagawa.nvim"
+  use "folke/tokyonight.nvim"
 
   use "tpope/vim-surround"
   use "tpope/vim-repeat"

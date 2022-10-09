@@ -1,6 +1,25 @@
--- material
-vim.g.material_terminal_italics = true
-vim.g.material_theme_style = "ocean"
+local function material()
+  vim.g.material_terminal_italics = true
+  vim.g.material_theme_style = "ocean"
+end
 
--- default
-vim.cmd("colorscheme material")
+local function kanagawa()
+  require("kanagawa").setup({ transparent = true })
+end
+
+local function tokyonight()
+  require("tokyonight").setup({
+    style = "night",
+    transparent = true,
+    styles = {
+      sidebars = "transparent",
+      floats = "transparent",
+    },
+  })
+end
+
+pcall(material)
+pcall(kanagawa)
+pcall(tokyonight)
+
+vim.cmd("colorscheme kanagawa")
