@@ -36,10 +36,13 @@ packer.startup(function(use)
     end,
   }
 
-  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
   use {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons" }
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons",
+      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+    }
   }
 end)
