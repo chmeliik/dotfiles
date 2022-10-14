@@ -16,8 +16,11 @@ zsh
 # TUIs
 fzf
 ncdu
-neovim
 ranger
+
+# vim
+neovim
+tree-sitter
 
 # coreutils replacements
 bat
