@@ -45,4 +45,11 @@ packer.startup(function(use)
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
     }
   }
+
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-buffer",
+    },
+  }
 end)
