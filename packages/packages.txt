@@ -21,6 +21,7 @@ ranger
 # vim
 neovim
 tree-sitter
+nodejs
 
 # coreutils replacements
 bat
