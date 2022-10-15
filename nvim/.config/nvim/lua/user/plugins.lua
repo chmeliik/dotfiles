@@ -46,10 +46,14 @@ packer.startup(function(use)
     }
   }
 
+  use { "L3MON4D3/LuaSnip", tag = "v1.*" }
+  use "rafamadriz/friendly-snippets"
+
   use {
     "hrsh7th/nvim-cmp",
     requires = {
       "hrsh7th/cmp-buffer",
+      "saadparwaiz1/cmp_luasnip",
     },
   }
 end)
