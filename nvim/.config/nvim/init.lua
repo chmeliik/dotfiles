@@ -2,9 +2,11 @@ require("user.opts")
 require("user.keymap")
 require("user.indentation")
 
-require("user.plugins")
+local try = require("user.lib").try
 
-require("user.colorscheme")
-require("user.telescope")
-require("user.treesitter")
-require("user.completion")
+try(require, "user.plugins")
+
+try(require, "user.colorscheme")
+try(require, "user.telescope")
+try(require, "user.treesitter")
+try(require, "user.completion")
