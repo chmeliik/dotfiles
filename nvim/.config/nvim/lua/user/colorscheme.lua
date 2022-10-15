@@ -18,8 +18,8 @@ local function tokyonight()
   })
 end
 
-pcall(material)
-pcall(kanagawa)
-pcall(tokyonight)
+material()
+kanagawa()
+tokyonight()
 
 vim.cmd("colorscheme kanagawa")
