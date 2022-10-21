@@ -1,7 +1,10 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({
+  -- exclude the generic snippets (doesn't disable lanugage-specific ones)
+  exclude = { "all" },
+})
 require("luasnip.loaders.from_lua").lazy_load()
 
 local kind_icons = {
@@ -56,7 +59,8 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ["<Tab>"] = cmp.mapping(tab, { "i", "s" }),
     ["<S-Tab>"] = cmp.mapping(shifttab, { "i", "s" }),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping.confirm(),
+    ["<S-CR>"] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-u>"] = cmp.mapping.scroll_docs(-4),
     ["<C-d>"] = cmp.mapping.scroll_docs(4),

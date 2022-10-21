@@ -15,9 +15,6 @@ end
 
 setup("sumneko_lua", {
   Lua = {
-    completion = {
-      callSnippet = "Both",
-    },
     diagnostics = {
       disable = { "need-check-nil" },
       -- s, t, i are injected by LuaSnip into snippet files
