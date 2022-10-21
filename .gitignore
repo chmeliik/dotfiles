@@ -8,3 +8,5 @@ zsh/.config/zsh/.*
 packer_compiled.lua
 nvim/.config/nvim/pack/packer
 !nvim/.config/nvim/pack/packer/start/packer.nvim
+
+ghc/.ghc/ghci_history
