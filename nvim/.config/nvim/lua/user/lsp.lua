@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  automatic_installation = true
+  automatic_installation = true,
 })
 
 local lspconfig = require("lspconfig")
@@ -24,3 +24,12 @@ setup("sumneko_lua", {
 })
 
 setup("pyright")
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.black,
+  },
+})
