@@ -6,4 +6,4 @@ vim.g.mapleader = " "
 map("n", "<C-j>", ":bnext<CR>")
 map("n", "<C-k>", ":bprev<CR>")
 
-map("n", "<Leader>e", ":Lexplore 20<CR>")
+map("n", "<Leader>E", ":Lexplore 20<CR>")
