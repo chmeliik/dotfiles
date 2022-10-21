@@ -90,9 +90,19 @@ cmp.setup({
   },
 })
 
-cmp.setup.cmdline("/", {
+for _, search_mode in pairs({ "/", "?" }) do
+  cmp.setup.cmdline(search_mode, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = "buffer" },
+    },
+  })
+end
+
+cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = "buffer" },
+    { name = "cmdline" },
+    { name = "path" },
   },
 })
