@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = "source <afile> | PackerSync",
 })
 
-packer.init {
+packer.init({
   package_root = vim.fn.stdpath("config") .. "/pack",
   -- use a floating window
   display = {
@@ -15,55 +15,55 @@ packer.init {
       return require("packer.util").float({ border = "rounded" })
     end,
   },
-}
+})
 
 packer.startup(function(use)
   -- self-manage
-  use "wbthomason/packer.nvim"
+  use("wbthomason/packer.nvim")
 
-  use "kaicataldo/material.vim"
-  use "rebelot/kanagawa.nvim"
-  use "folke/tokyonight.nvim"
+  use("kaicataldo/material.vim")
+  use("rebelot/kanagawa.nvim")
+  use("folke/tokyonight.nvim")
 
-  use "tpope/vim-surround"
-  use "tpope/vim-repeat"
-  use "tpope/vim-commentary"
+  use("tpope/vim-surround")
+  use("tpope/vim-repeat")
+  use("tpope/vim-commentary")
 
-  use {
+  use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
-  }
+  })
 
-  use {
+  use({
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     requires = {
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons",
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-    }
-  }
+    },
+  })
 
-  use { "L3MON4D3/LuaSnip", tag = "v1.*" }
-  use "rafamadriz/friendly-snippets"
+  use({ "L3MON4D3/LuaSnip", tag = "v1.*" })
+  use("rafamadriz/friendly-snippets")
 
-  use {
+  use({
     "hrsh7th/nvim-cmp",
     requires = {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lsp",
       "saadparwaiz1/cmp_luasnip",
     },
-  }
+  })
 
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig"
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig")
 
-  use {
+  use({
     "jose-elias-alvarez/null-ls.nvim",
     requires = "nvim-lua/plenary.nvim",
-  }
+  })
 end)

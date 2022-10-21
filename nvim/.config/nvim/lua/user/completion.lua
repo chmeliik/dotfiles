@@ -73,13 +73,13 @@ cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
-    end
+    end,
   },
   formatting = {
     format = function(_, vim_item)
       vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
       return vim_item
-    end
+    end,
   },
   window = {
     completion = cmp.config.window.bordered(),
