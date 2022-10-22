@@ -6,10 +6,6 @@
 	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
 	shallow = true
-[submodule "zsh/.config/zsh/plugins/powerlevel10k"]
-	path = zsh/.config/zsh/plugins/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
-	shallow = true
 [submodule "zsh/.config/zsh/plugins/fzf-tab"]
 	path = zsh/.config/zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab

@@ -19,7 +19,6 @@ source "$ZDOTDIR/git.zsh"
 source "$ZDOTDIR/bat.zsh"
 source "$ZDOTDIR/navigation.zsh"
 source "$ZDOTDIR/completion.zsh"
-source "$ZDOTDIR/p10k.zsh"
 # ------------------------------------------------------------------------------
 
 # --- fzf integration ----------------------------------------------------------
@@ -43,5 +42,6 @@ PLUGINS="$ZDOTDIR/plugins"
 source "$PLUGINS/fzf-tab/fzf-tab.plugin.zsh"
 source "$PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$PLUGINS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-source "$PLUGINS/powerlevel10k/powerlevel10k.zsh-theme"
 # ------------------------------------------------------------------------------
+
+eval "$(starship init zsh)"
