@@ -1,6 +1,6 @@
 require("user.opts")
 require("user.keymap")
-require("user.indentation")
+require("user.filetype")
 
 local try = require("user.lib").try
 
