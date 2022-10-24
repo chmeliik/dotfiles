@@ -2,7 +2,7 @@ require("nvim-treesitter.configs").setup({
   auto_install = true,
   highlight = {
     enable = true,
-    disable = { "make", "help" },
+    disable = { "make", "help", "markdown" },
   },
   indent = {
     enable = true,
