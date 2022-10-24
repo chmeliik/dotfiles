@@ -71,4 +71,5 @@ null_ls.setup({
     null_ls.builtins.formatting.black,
     null_ls.builtins.diagnostics.markdownlint,
   },
+  on_attach = on_attach,
 })
