@@ -25,7 +25,7 @@ local function on_attach(_, bufnr)
   bufmap("n", "<Leader>D", vim.lsp.buf.declaration)
 
   bufmap("n", "K", vim.lsp.buf.hover)
-  bufmap("n", "<C-k>", vim.lsp.buf.signature_help)
+  bufmap("n", "<A-k>", vim.lsp.buf.signature_help)
 
   bufmap("n", "<Leader>wa", vim.lsp.buf.add_workspace_folder)
   bufmap("n", "<Leader>wr", vim.lsp.buf.remove_workspace_folder)
