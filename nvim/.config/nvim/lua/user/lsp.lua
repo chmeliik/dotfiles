@@ -54,7 +54,6 @@ end
 setup("sumneko_lua", {
   Lua = {
     diagnostics = {
-      disable = { "need-check-nil" },
       -- s, t, i are injected by LuaSnip into snippet files
       globals = { "vim", "s", "t", "i" },
     },

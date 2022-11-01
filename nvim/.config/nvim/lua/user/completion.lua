@@ -1,3 +1,4 @@
+---@diagnostic disable: need-check-nil
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
