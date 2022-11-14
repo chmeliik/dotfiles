@@ -5,6 +5,9 @@ style = "bold blue"
 repo_root_style = "bold purple"
 use_logical_path = false
 
+[docker_context]
+disabled = true
+
 [git_status]
 format = "([${ahead_behind}${all_status}]($style) )"
 style = "bold purple"
