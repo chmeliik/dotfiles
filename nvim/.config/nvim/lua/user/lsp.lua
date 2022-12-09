@@ -57,6 +57,9 @@ setup("sumneko_lua", {
       -- s, t, i are injected by LuaSnip into snippet files
       globals = { "vim", "s", "t", "i" },
     },
+    workspace = {
+      checkThirdParty = false,
+    }
   },
 })
 
