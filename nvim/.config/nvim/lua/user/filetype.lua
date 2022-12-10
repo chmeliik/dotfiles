@@ -15,10 +15,7 @@ local ft_settings = {
   lua = function() spaces(2) end,
   xml = function() spaces(2) end,
   yaml = function() spaces(2) end,
-  markdown = function()
-    spaces(2)
-    vim.opt_local.spell = true
-  end,
+  markdown = function() spaces(2) end,
 }
 
 vim.api.nvim_create_augroup("user.filetype", {})
