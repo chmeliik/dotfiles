@@ -4,15 +4,11 @@ autoload -U colors; colors      # convenient color variables
 
 setopt no_beep
 
-export path=("$HOME/.local/bin" $path)
-
-# run podman-docker as user
-export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
-
 export WORDCHARS='-_'  # treat only alnum and '-_' as word chars
 # ------------------------------------------------------------------------------
 
 # --- modular config -----------------------------------------------------------
+source "$ZDOTDIR/env.zsh"
 source "$ZDOTDIR/history.zsh"
 source "$ZDOTDIR/keymap.zsh"
 source "$ZDOTDIR/git.zsh"
