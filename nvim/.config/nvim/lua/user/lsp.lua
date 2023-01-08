@@ -65,6 +65,8 @@ setup("sumneko_lua", {
 
 setup("pyright")
 
+setup("rust_analyzer")
+
 local null_ls = require("null-ls")
 
 null_ls.setup({
