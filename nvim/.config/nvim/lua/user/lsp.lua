@@ -51,15 +51,14 @@ local function setup(server_name, settings)
   })
 end
 
-setup("sumneko_lua", {
+setup("lua_ls", {
   Lua = {
-    diagnostics = {
-      -- s, t, i are injected by LuaSnip into snippet files
+    diagnostics = { -- s, t, i are injected by LuaSnip into snippet files
       globals = { "vim", "s", "t", "i" },
     },
     workspace = {
       checkThirdParty = false,
-    }
+    },
   },
 })
 
