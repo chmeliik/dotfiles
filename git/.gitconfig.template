@@ -15,6 +15,9 @@
 [pull]
     rebase = true
 
+[init]
+    templateDir = ~/.git-template
+
 [core]
     pager = delta
 
