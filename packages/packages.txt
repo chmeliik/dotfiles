@@ -22,6 +22,7 @@ ranger
 neovim
 tree-sitter
 nodejs
+xclip
 
 # coreutils replacements
 bat
