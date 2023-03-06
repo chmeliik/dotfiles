@@ -4,7 +4,18 @@ local function material()
 end
 
 local function kanagawa()
-  require("kanagawa").setup({ transparent = true })
+  require("kanagawa").setup({
+    transparent = true,
+    colors = {
+      theme = {
+        all = {
+          ui = {
+            bg_gutter = "none",
+          },
+        },
+      },
+    },
+  })
 end
 
 local function tokyonight()
