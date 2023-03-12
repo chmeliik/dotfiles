@@ -47,6 +47,8 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
+require("neodev").setup()
+
 local function setup(server_name, settings, override_capabilities)
   local lspconfig = require("lspconfig")
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -63,7 +65,7 @@ end
 setup("lua_ls", {
   Lua = {
     diagnostics = { -- s, t, i are injected by LuaSnip into snippet files
-      globals = { "vim", "s", "t", "i" },
+      globals = { "s", "t", "i" },
     },
     workspace = {
       checkThirdParty = false,
