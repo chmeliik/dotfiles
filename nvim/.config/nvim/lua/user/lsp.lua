@@ -1,8 +1,3 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-  automatic_installation = true,
-})
-
 local map = require("user.lib").map
 local telescope_builtin = require("telescope.builtin")
 
@@ -13,7 +8,7 @@ map("n", "<Leader>q", function()
   telescope_builtin.diagnostics({ bufnr = 0 })
 end)
 
-local function on_attach(_, bufnr)
+local function on_attach(client, bufnr, override_capabilities)
   local function bufmap(mode, lhs, rhs)
     vim.keymap.set(mode, lhs, rhs, { silent = true, buffer = bufnr })
   end
@@ -38,16 +33,30 @@ local function on_attach(_, bufnr)
   bufmap("n", "<Leader>F", function()
     vim.lsp.buf.format({ async = true })
   end)
+
+  local server_capabilities = vim.tbl_deep_extend(
+    "force",
+    client.server_capabilities,
+    override_capabilities or {}
+  )
+  client.server_capabilities = server_capabilities
 end
 
-local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+require("mason").setup()
+require("mason-lspconfig").setup({
+  automatic_installation = true,
+})
 
-local function setup(server_name, settings)
+local function setup(server_name, settings, override_capabilities)
+  local lspconfig = require("lspconfig")
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
   lspconfig[server_name].setup({
     settings = settings or {},
     capabilities = capabilities,
-    on_attach = on_attach,
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr, override_capabilities)
+    end,
   })
 end
 
@@ -63,6 +72,7 @@ setup("lua_ls", {
 })
 
 setup("pyright")
+setup("ruff_lsp", {}, { hoverProvider = false })
 
 setup("rust_analyzer")
 
@@ -72,10 +82,13 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.isort,
+    null_ls.builtins.formatting.ruff,
     null_ls.builtins.formatting.markdownlint,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.write_good,
   },
   on_attach = on_attach,
 })
+
+-- unlike mason-lspconfig, mason-null-ls needs to be called *after* setting up sources
+require("mason-null-ls").setup({ automatic_installation = true })
