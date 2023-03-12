@@ -1,7 +1,9 @@
+---@param n integer
 local function spaces(n)
   vim.opt_local.shiftwidth = n
 end
 
+---@param width integer
 local function tabs(width)
   vim.opt_local.tabstop = width or 8
   vim.opt_local.shiftwidth = 0

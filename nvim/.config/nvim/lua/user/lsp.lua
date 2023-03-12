@@ -8,6 +8,9 @@ map("n", "<Leader>q", function()
   telescope_builtin.diagnostics({ bufnr = 0 })
 end)
 
+---@param client any
+---@param bufnr integer
+---@param override_capabilities table?
 local function on_attach(client, bufnr, override_capabilities)
   local function bufmap(mode, lhs, rhs)
     vim.keymap.set(mode, lhs, rhs, { silent = true, buffer = bufnr })
@@ -49,32 +52,37 @@ require("mason-lspconfig").setup({
 
 require("neodev").setup()
 
-local function setup(server_name, settings, override_capabilities)
+---@param server_name string
+---@param config { settings: table?, capabilities: table? }?
+local function setup(server_name, config)
   local lspconfig = require("lspconfig")
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  config = config or {}
 
   lspconfig[server_name].setup({
-    settings = settings or {},
+    settings = config.settings or {},
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-      on_attach(client, bufnr, override_capabilities)
+      on_attach(client, bufnr, config.capabilities)
     end,
   })
 end
 
 setup("lua_ls", {
-  Lua = {
-    diagnostics = { -- s, t, i are injected by LuaSnip into snippet files
-      globals = { "s", "t", "i" },
-    },
-    workspace = {
-      checkThirdParty = false,
+  settings = {
+    Lua = {
+      diagnostics = { -- s, t, i are injected by LuaSnip into snippet files
+        globals = { "s", "t", "i" },
+      },
+      workspace = {
+        checkThirdParty = false,
+      },
     },
   },
 })
 
 setup("pyright")
-setup("ruff_lsp", {}, { hoverProvider = false })
+setup("ruff_lsp", { capabilities = { hoverProvider = false } })
 
 setup("rust_analyzer")
 
