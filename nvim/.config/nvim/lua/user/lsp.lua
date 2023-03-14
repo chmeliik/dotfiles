@@ -53,19 +53,13 @@ require("mason-lspconfig").setup({
 require("neodev").setup()
 
 ---@param server_name string
----@param config { settings: table?, capabilities: table? }?
-local function setup(server_name, config)
-  local lspconfig = require("lspconfig")
-  local capabilities = require("cmp_nvim_lsp").default_capabilities()
-  config = config or {}
-
-  lspconfig[server_name].setup({
-    settings = config.settings or {},
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-      on_attach(client, bufnr, config.capabilities)
-    end,
+---@param args table<string, any>?
+local function setup(server_name, args)
+  args = vim.tbl_deep_extend("keep", args or {}, {
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    on_attach = on_attach,
   })
+  require("lspconfig")[server_name].setup(args)
 end
 
 setup("lua_ls", {
@@ -82,7 +76,17 @@ setup("lua_ls", {
 })
 
 setup("pyright")
-setup("ruff_lsp", { capabilities = { hoverProvider = false } })
+setup("ruff_lsp", {
+  init_options = {
+    settings = {
+      -- line-too-long
+      args = { "--ignore=E501" },
+    },
+  },
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr, { hoverProvider = false })
+  end,
+})
 
 setup("rust_analyzer")
 
