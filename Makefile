@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git
+CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git ruff
 
 ### Main
 
