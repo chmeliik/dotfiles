@@ -1,11 +1,10 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
-
 require("luasnip.loaders.from_vscode").lazy_load({
   -- exclude the generic snippets (doesn't disable lanugage-specific ones)
   exclude = { "all" },
 })
 require("luasnip.loaders.from_lua").lazy_load()
+
+require("nvim-autopairs").setup()
 
 local kind_icons = {
   Text = "",
@@ -34,6 +33,9 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
+
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 local function tab(fallback)
   if cmp.visible() then
@@ -92,6 +94,8 @@ cmp.setup({
     ghost_text = true,
   },
 })
+
+cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
 
 for _, search_mode in pairs({ "/", "?" }) do
   cmp.setup.cmdline(search_mode, {

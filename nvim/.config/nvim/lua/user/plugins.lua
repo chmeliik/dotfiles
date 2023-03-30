@@ -61,6 +61,8 @@ packer.startup(function(use)
     },
   })
 
+  use("windwp/nvim-autopairs")
+
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
   use("jay-babu/mason-null-ls.nvim")
