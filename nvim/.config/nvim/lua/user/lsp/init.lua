@@ -49,6 +49,8 @@ setup_server("rust_analyzer")
 setup_server("gopls")
 
 -- Markdown
+setup_server("marksman")
+
 null_ls_register("markdownlint", { "formatting", "diagnostics" })
 null_ls_register("write_good", "diagnostics")
 
