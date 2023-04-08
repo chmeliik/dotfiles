@@ -90,6 +90,8 @@ setup("ruff_lsp", {
 
 setup("rust_analyzer")
 
+setup("gopls")
+
 local null_ls = require("null-ls")
 
 null_ls.setup({
