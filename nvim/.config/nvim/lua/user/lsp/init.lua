@@ -48,6 +48,9 @@ setup_server("rust_analyzer")
 -- Go
 setup_server("gopls")
 
+-- Bash
+setup_server("bashls")
+
 -- Markdown
 setup_server("marksman")
 
@@ -57,4 +60,7 @@ null_ls_register("write_good", "diagnostics")
 --#endregion servers
 
 require("null-ls").setup({ on_attach = on_attach })
-require("mason-null-ls").setup({ automatic_installation = true })
+require("mason-null-ls").setup({
+  ensure_installed = { "shellcheck" }, -- for bash-language-server
+  automatic_installation = true,
+})
