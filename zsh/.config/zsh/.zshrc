@@ -15,6 +15,7 @@ source "$ZDOTDIR/git.zsh"
 source "$ZDOTDIR/bat.zsh"
 source "$ZDOTDIR/navigation.zsh"
 source "$ZDOTDIR/completion.zsh"
+source "$ZDOTDIR/hooks.zsh"
 # ------------------------------------------------------------------------------
 
 # --- fzf integration ----------------------------------------------------------
