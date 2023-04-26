@@ -1,31 +1,31 @@
 # vim: ft=gitconfig
 [user]
-    name = ${git_user_name}
-    email = ${git_user_email}
-    signingkey = ${git_user_signingkey}
+	name = ${git_user_name}
+	email = ${git_user_email}
+	signingkey = ${git_user_signingkey}
 
 [alias]
-    pr = !sh -c 'git fetch -f upstream "pull/$1/head:$1"' -
-    mr = !sh -c 'git fetch -f upstream "merge-requests/$1/head:$1"' -
-    run = !sh -c 'exec "$@"' -
+	pr = !sh -c 'git fetch -f upstream "pull/$1/head:$1"' -
+	mr = !sh -c 'git fetch -f upstream "merge-requests/$1/head:$1"' -
+	run = !sh -c 'exec "$@"' -
 
 [commit]
-    gpgsign = true
+	gpgsign = true
 
 [pull]
-    rebase = true
+	rebase = true
 
 [init]
-    defaultBranch = main
-    templateDir = ~/.git-template
+	defaultBranch = main
+	templateDir = ~/.git-template
 
 [core]
-    pager = delta
+	pager = delta
 
 [interactive]
-    diffFilter = delta --color-only --features=interactive
+	diffFilter = delta --color-only --features=interactive
 
 [delta]
-    features = decorations line-numbers
-    file-style = purple
-    file-decoration-style = purple ul
+	features = decorations line-numbers
+	file-style = purple
+	file-decoration-style = purple ul
