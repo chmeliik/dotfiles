@@ -10,9 +10,11 @@ local function tabs(width)
   vim.opt_local.expandtab = false
 end
 
+-- stylua: ignore
 local ft_settings = {
   go = function() tabs(4) end,
   make = function() tabs(4) end,
+  gitconfig = function() tabs(4) end,
   json = function() spaces(2) end,
   lua = function() spaces(2) end,
   xml = function() spaces(2) end,
