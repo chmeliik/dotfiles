@@ -57,6 +57,9 @@ setup_server("marksman")
 null_ls_register("markdownlint", { "formatting", "diagnostics" })
 null_ls_register("write_good", "diagnostics")
 
+-- JSON
+null_ls_register("fixjson", "formatting")
+
 --#endregion servers
 
 require("null-ls").setup({ on_attach = on_attach })
