@@ -8,7 +8,6 @@ export WORDCHARS='-_'  # treat only alnum and '-_' as word chars
 # ------------------------------------------------------------------------------
 
 # --- modular config -----------------------------------------------------------
-source "$ZDOTDIR/env.zsh"
 source "$ZDOTDIR/history.zsh"
 source "$ZDOTDIR/keymap.zsh"
 source "$ZDOTDIR/git.zsh"
