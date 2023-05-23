@@ -7,7 +7,7 @@ CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git ruff mime
 main: configs scripts zsh-plugins vim-plugins
 
 .PHONY: all
-all: main dotfile-watcher nerdfonts
+all: main dotfile-watcher nerdfonts gnome-hacks
 
 .PHONY: configs
 configs: templates
@@ -72,6 +72,12 @@ nerdfonts:
 	git sparse-checkout set patched-fonts/JetBrainsMono
 	git checkout
 	./install.sh JetBrainsMono
+
+.PHONY: gnome-hacks
+gnome-hacks:
+	mkdir -p ~/.local/bin
+	# open *.desktop terminal apps in kitty
+	ln -sf $(shell command -v kitty) ~/.local/bin/gnome-terminal
 
 ### Templating
 
