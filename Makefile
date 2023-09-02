@@ -29,7 +29,7 @@ zsh-plugins:
 vim-plugins:
 	git submodule init -- nvim/
 	git submodule update -- nvim/
-	nvim --headless -c 'PackerInstall' -c 'autocmd User PackerComplete quitall' 
+	nvim --headless '+Lazy! install' '+qa'
 
 ### Updating
 
@@ -42,7 +42,8 @@ update-zsh-plugins:
 
 .PHONY: update-vim-plugins
 update-vim-plugins:
-	nvim -c 'PackerSync' -c 'autocmd WinClosed * quitall' 
+	git submodule update --remote -- nvim/
+	nvim --headless '+Lazy! update' '+qa'
 
 ### Situational
 

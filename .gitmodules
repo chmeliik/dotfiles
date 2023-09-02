@@ -10,7 +10,7 @@
 	path = zsh/.config/zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 	shallow = true
-[submodule "nvim/.config/nvim/pack/packer/start/packer.nvim"]
-	path = nvim/.config/nvim/pack/packer/start/packer.nvim
-	url = https://github.com/wbthomason/packer.nvim.git
+[submodule "nvim/.config/nvim/pack/lazy/start/lazy.nvim"]
+	path = nvim/.config/nvim/pack/lazy/start/lazy.nvim
+	url = https://github.com/folke/lazy.nvim.git
 	shallow = true
