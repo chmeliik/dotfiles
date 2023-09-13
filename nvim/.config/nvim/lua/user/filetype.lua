@@ -20,6 +20,8 @@ local ft_settings = {
   xml = function() spaces(2) end,
   yaml = function() spaces(2) end,
   markdown = function() spaces(2) end,
+  javascript = function() spaces(2) end,
+  typescript = function() spaces(2) end,
 }
 
 vim.api.nvim_create_augroup("user.filetype", {})
