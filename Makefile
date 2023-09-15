@@ -29,7 +29,7 @@ zsh-plugins:
 vim-plugins:
 	git submodule init -- nvim/
 	git submodule update -- nvim/
-	nvim --headless '+Lazy! install' '+qa'
+	nvim --headless '+Lazy! restore' '+qa'
 
 ### Updating
 
