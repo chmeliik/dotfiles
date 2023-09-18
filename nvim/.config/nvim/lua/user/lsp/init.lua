@@ -48,6 +48,9 @@ setup_server("rust_analyzer")
 -- Go
 setup_server("gopls")
 
+-- JS/TS
+setup_server("tsserver")
+
 -- Bash
 setup_server("bashls")
 
