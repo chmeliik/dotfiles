@@ -2,7 +2,7 @@ require("nvim-treesitter.configs").setup({
   auto_install = true,
   highlight = {
     enable = true,
-    disable = { "make", "markdown", "gitcommit" },
+    disable = { "make", "markdown", "gitcommit", "vim" },
   },
   indent = {
     enable = true,
@@ -16,5 +16,9 @@ require("nvim-treesitter.configs").setup({
       node_incremental = "<Tab>",
       node_decremental = "<S-Tab>",
     },
+    is_supported = function()
+      local mode = vim.api.nvim_get_mode()
+      return mode.mode ~= "c"
+    end,
   },
 })
