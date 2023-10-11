@@ -17,10 +17,7 @@ use("tpope/vim-commentary")
 
 use({
   "nvim-treesitter/nvim-treesitter",
-  build = function()
-    local ts_update = require("nvim-treesitter.install").update()
-    ts_update()
-  end,
+  build = ":TSUpdateSync",
 })
 
 use({
