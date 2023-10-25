@@ -21,6 +21,7 @@ map("n", "<Leader>*", telescope_builtin.grep_string)
 map("n", "<Leader>ls", telescope_builtin.buffers)
 map("n", "<Leader>R", telescope_builtin.command_history)
 map("n", "<Leader>T", telescope_builtin.builtin)
+map("n", "<Leader>Q", telescope_builtin.diagnostics) -- all buffers
 map("n", "<Leader>q", function()
-  telescope_builtin.diagnostics({ bufnr = 0 })
+  telescope_builtin.diagnostics({ bufnr = 0 }) -- current buffer
 end)
