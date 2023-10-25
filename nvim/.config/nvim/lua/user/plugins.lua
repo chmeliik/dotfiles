@@ -61,4 +61,6 @@ use({
 
 use("folke/neodev.nvim")
 
+use("cshuaimin/ssr.nvim")
+
 lazy.setup(plugins)
