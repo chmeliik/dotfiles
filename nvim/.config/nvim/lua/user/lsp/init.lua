@@ -39,7 +39,6 @@ setup_server("ruff_lsp", {
   end,
 })
 
-null_ls_register("black", "formatting")
 null_ls_register("ruff", "formatting", { extra_args = { "--select=I" } })
 
 -- Rust
