@@ -13,15 +13,24 @@ telescope.setup({
 telescope.load_extension("fzf")
 
 local map = require("user.lib").map
+local mkfn = require("user.lib").mkfn
 local telescope_builtin = require("telescope.builtin")
 
-map("n", "<Leader>fd", telescope_builtin.find_files)
-map("n", "<Leader>rg", telescope_builtin.live_grep)
-map("n", "<Leader>*", telescope_builtin.grep_string)
+local files_opts = {
+  find_command = { "rg", "--files", "--color=never", "--hidden", "--glob=!.git" },
+}
+
+local grep_opts = {
+  additional_args = { "--hidden", "--glob=!.git" },
+}
+
+map("n", "<Leader>fd", mkfn(telescope_builtin.find_files, files_opts))
+map("n", "<Leader>rg", mkfn(telescope_builtin.live_grep, grep_opts))
+map("n", "<Leader>*", mkfn(telescope_builtin.grep_string, grep_opts))
 map("n", "<Leader>ls", telescope_builtin.buffers)
 map("n", "<Leader>R", telescope_builtin.command_history)
 map("n", "<Leader>T", telescope_builtin.builtin)
-map("n", "<Leader>Q", telescope_builtin.diagnostics) -- all buffers
-map("n", "<Leader>q", function()
-  telescope_builtin.diagnostics({ bufnr = 0 }) -- current buffer
-end)
+-- all buffers
+map("n", "<Leader>Q", telescope_builtin.diagnostics)
+-- current buffer
+map("n", "<Leader>q", mkfn(telescope_builtin.diagnostics, { bufnr = 0 }))

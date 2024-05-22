@@ -16,4 +16,13 @@ function lib.try(fn, ...)
   end
 end
 
+---@param fn function
+---@param ... any
+function lib.mkfn(fn, ...)
+  local args = { ... }
+  return function()
+    fn(table.unpack(args))
+  end
+end
+
 return lib
