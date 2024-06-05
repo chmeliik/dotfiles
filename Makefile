@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git ruff mime ncdu
+CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty ruff mime ncdu
 
 ### Main
 
@@ -7,11 +7,11 @@ CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty git ruff mime ncdu
 main: configs scripts zsh-plugins vim-plugins
 
 .PHONY: all
-all: main dotfile-watcher nerdfonts gnome-hacks
+all: main gitconfig dotfile-watcher nerdfonts gnome-hacks
 
 .PHONY: configs
-configs: templates
-	stow $(CONFIG_DIRS) --ignore='\.template'
+configs:
+	stow $(CONFIG_DIRS)
 
 .PHONY: scripts
 scripts:
@@ -46,6 +46,10 @@ update-vim-plugins:
 	nvim --headless '+Lazy! update' '+qa'
 
 ### Situational
+
+.PHONY: gitconfig
+gitconfig: templates
+	stow git --ignore='\.template'
 
 .PHONY: package-list
 .ONESHELL:
