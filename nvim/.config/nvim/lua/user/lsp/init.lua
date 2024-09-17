@@ -48,7 +48,7 @@ setup_server("rust_analyzer")
 setup_server("gopls")
 
 -- JS/TS
-setup_server("tsserver")
+setup_server("ts_ls")
 
 -- Bash
 setup_server("bashls")
