@@ -27,19 +27,21 @@ null_ls_register("stylua", "formatting")
 
 -- Python
 setup_server("pyright")
-setup_server("ruff_lsp", {
+setup_server("ruff", {
   init_options = {
     settings = {
-      -- line-too-long
-      args = { "--ignore=E501" },
+      lint = {
+        extendIgnore = {
+          -- line-too-long
+          "E501",
+        },
+      },
     },
   },
   on_attach = function(client, bufnr)
     on_attach(client, bufnr, { hoverProvider = false })
   end,
 })
-
-null_ls_register("ruff", "formatting", { extra_args = { "--select=I" } })
 
 -- Rust
 setup_server("rust_analyzer")
