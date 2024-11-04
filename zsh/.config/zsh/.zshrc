@@ -3,6 +3,7 @@ autoload -U compinit; compinit  # completion system, needs to be called early
 autoload -U colors; colors      # convenient color variables
 
 setopt no_beep
+setopt interactivecomments
 
 export WORDCHARS='-_'  # treat only alnum and '-_' as word chars
 # ------------------------------------------------------------------------------
