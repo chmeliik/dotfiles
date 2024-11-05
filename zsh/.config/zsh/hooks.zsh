@@ -13,4 +13,33 @@ _activate_venv () {
     done
 }
 
+_dotenv () {
+    if [[ ! -f .env ]]; then
+        return
+    fi
+
+    while true; do
+        # print same-line prompt and output newline character if necessary
+        echo -n "dotenv: found '.env' file. Source it? ([N]o/[y]es/[v]iew) "
+        read -k 1 confirmation
+        [[ "$confirmation" = $'\n' ]] || echo
+
+        case "${confirmation:-N}" in
+            [vV])   bat --paging=always .env ;;
+            [yY])   break ;;  # end the loop and source the file
+            *)      return ;;  # exit without sourcing the file
+        esac
+    done
+
+    # test .env syntax
+    zsh -fn .env || {
+        echo "dotenv: error when sourcing '.env' file" >&2
+        return 1
+    }
+
+    setopt localoptions allexport
+    source .env
+}
+
 add-zsh-hook chpwd _activate_venv
+add-zsh-hook chpwd _dotenv
