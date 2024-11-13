@@ -1,44 +1,45 @@
 autoload -U add-zsh-hook
 
-_activate_venv () {
-    local dir=$PWD
-    # look for ./venv/bin/activate in current and parent directories, until
-    # we reach a directory not owned by the current user (or the root directory)
-    while [[ -O "$dir" && "$dir" != '/' ]]; do
-        if [[ -f "$dir/venv/bin/activate" ]]; then
-            source "$dir/venv/bin/activate"
-            break
-        fi
-        dir=$(realpath "$dir/..")
-    done
-}
-
-_dotenv () {
-    if [[ ! -f .env ]]; then
-        return
-    fi
+_get_confirmation () {
+    local file=$1
+    local prefix=$2
 
     while true; do
         # print same-line prompt and output newline character if necessary
-        echo -n "dotenv: found '.env' file. Source it? ([N]o/[y]es/[v]iew) "
+        echo -n "$prefix: found '$file' file. Source it? ([N]o/[y]es/[v]iew) "
         read -k 1 confirmation
         [[ "$confirmation" = $'\n' ]] || echo
 
         case "${confirmation:-N}" in
-            [vV])   bat --paging=always .env ;;
-            [yY])   break ;;  # end the loop and source the file
-            *)      return ;;  # exit without sourcing the file
+            [vV])   bat --paging=always "$file" ;;
+            [yY])   return 0 ;;
+            *)      return 1 ;;
         esac
     done
+}
 
-    # test .env syntax
-    zsh -fn .env || {
-        echo "dotenv: error when sourcing '.env' file" >&2
-        return 1
-    }
+_activate_venv () {
+    if [[ "${VIRTUAL_ENV:-}" == "$PWD/venv" ]]; then
+         # already active
+         return
+    fi
 
-    setopt localoptions allexport
-    source .env
+    if [[ -f venv/bin/activate ]] && _get_confirmation venv/bin/activate "venv"; then
+        source venv/bin/activate
+    fi
+}
+
+_dotenv () {
+    if [[ -f .env ]] && _get_confirmation .env "dotenv"; then
+        # test .env syntax
+        zsh -fn .env || {
+            echo "dotenv: error when sourcing '.env' file" >&2
+            return 1
+        }
+
+        setopt localoptions allexport
+        source .env
+    fi
 }
 
 add-zsh-hook chpwd _activate_venv
