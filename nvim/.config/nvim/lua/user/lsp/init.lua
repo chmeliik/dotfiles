@@ -49,6 +49,9 @@ setup_server("rust_analyzer")
 -- Go
 setup_server("gopls")
 
+-- Haskell
+setup_server("hls")
+
 -- JS/TS
 setup_server("ts_ls")
 
