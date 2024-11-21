@@ -43,4 +43,3 @@ _dotenv () {
 }
 
 add-zsh-hook chpwd _activate_venv
-add-zsh-hook chpwd _dotenv
