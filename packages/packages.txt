@@ -12,6 +12,7 @@ jetbrains-mono-fonts
 
 # shell
 zsh
+direnv
 
 # TUIs
 fzf

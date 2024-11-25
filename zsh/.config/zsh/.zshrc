@@ -42,3 +42,4 @@ source "$PLUGINS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 # ------------------------------------------------------------------------------
 
 eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
