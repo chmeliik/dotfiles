@@ -23,3 +23,7 @@ modified = "[!${count}](yellow)"
 staged = "[+${count}](green)"
 renamed = "[»${count}](green)"
 deleted = "[x${count}](red)"
+
+[direnv]
+disabled = false
+detect_files = [".envrc", ".env"]
