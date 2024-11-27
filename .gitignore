@@ -4,7 +4,7 @@ git/.gitconfig
 
 zsh/.config/zsh/.*
 !zsh/.config/zsh/.zshrc
-!zsh/.config/zsh/.zprofile
+!zsh/.config/zsh/.zshenv
 
 packer_compiled.lua
 nvim/.config/nvim/pack/packer
