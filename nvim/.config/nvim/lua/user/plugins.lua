@@ -48,8 +48,8 @@ use({
 
 use("windwp/nvim-autopairs")
 
-use("williamboman/mason.nvim")
-use("williamboman/mason-lspconfig.nvim")
+use({ "williamboman/mason.nvim", version = "v1.x" })
+use({ "williamboman/mason-lspconfig.nvim", version = "v1.x" })
 use("jay-babu/mason-null-ls.nvim")
 
 use("neovim/nvim-lspconfig")
