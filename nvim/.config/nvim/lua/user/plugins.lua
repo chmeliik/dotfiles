@@ -30,8 +30,11 @@ use({
 
 use("stevearc/dressing.nvim")
 
-use({ "L3MON4D3/LuaSnip", version = "2.*" })
-use("rafamadriz/friendly-snippets")
+use({
+  "L3MON4D3/LuaSnip",
+  version = "2.*",
+  dependencies = { "rafamadriz/friendly-snippets" },
+})
 
 use({
   "hrsh7th/nvim-cmp",
