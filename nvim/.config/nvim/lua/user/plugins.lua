@@ -7,9 +7,7 @@ local function use(plugin_spec)
   table.insert(plugins, { plugin_spec })
 end
 
-use("kaicataldo/material.vim")
 use("rebelot/kanagawa.nvim")
-use("folke/tokyonight.nvim")
 
 use("tpope/vim-surround")
 use("tpope/vim-repeat")
