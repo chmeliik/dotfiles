@@ -18,14 +18,20 @@ _get_confirmation () {
     done
 }
 
-_activate_venv () {
-    if [[ "${VIRTUAL_ENV:-}" == "$PWD/venv" ]]; then
+_activate_venv() {
+    if [[ $(dirname "${VIRTUAL_ENV:-}") == "$PWD" ]]; then
          # already active
          return
     fi
 
-    if [[ -f venv/bin/activate ]] && _get_confirmation venv/bin/activate "venv"; then
-        source venv/bin/activate
+    _activate_venv_at_path "venv"
+    _activate_venv_at_path ".venv"
+}
+
+_activate_venv_at_path () {
+    local venv=$1
+    if [[ -f "$venv/bin/activate" ]] && _get_confirmation "$venv/bin/activate" "venv"; then
+        source "$venv/bin/activate"
     fi
 }
 
