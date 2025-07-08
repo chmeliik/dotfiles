@@ -5,7 +5,6 @@ require("mason-lspconfig").setup({
 
 local setup_server = require("user.lsp.machinery").setup_server
 local null_ls_register = require("user.lsp.machinery").null_ls_register
-local on_attach = require("user.lsp.machinery").on_attach
 
 --#region servers
 
@@ -39,7 +38,7 @@ setup_server("ruff", {
     },
   },
   on_attach = function(client, bufnr)
-    on_attach(client, bufnr, { hoverProvider = false })
+    client.server_capabilities.hoverProvider = false
   end,
 })
 
