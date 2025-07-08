@@ -3,8 +3,6 @@ require("mason-lspconfig").setup({
   automatic_installation = { exclude = { "hls" } },
 })
 
-require("neodev").setup()
-
 local setup_server = require("user.lsp.machinery").setup_server
 local null_ls_register = require("user.lsp.machinery").null_ls_register
 local on_attach = require("user.lsp.machinery").on_attach

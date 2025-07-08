@@ -45,6 +45,13 @@ use({
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
   },
+  opts = function(_, opts)
+    opts.sources = opts.sources or {}
+    table.insert(opts.sources, {
+      name = "lazydev",
+      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+    })
+  end,
 })
 
 use("windwp/nvim-autopairs")
@@ -60,7 +67,7 @@ use({
   dependencies = { "nvim-lua/plenary.nvim" },
 })
 
-use("folke/neodev.nvim")
+use({ "folke/lazydev.nvim", ft = "lua", opts = {} })
 
 use("cshuaimin/ssr.nvim")
 
