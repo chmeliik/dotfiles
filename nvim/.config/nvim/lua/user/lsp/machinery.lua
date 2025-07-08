@@ -22,7 +22,7 @@ function M.on_attach(client, bufnr, override_capabilities)
   bufmap("n", "<Leader>wa", vim.lsp.buf.add_workspace_folder)
   bufmap("n", "<Leader>wr", vim.lsp.buf.remove_workspace_folder)
   bufmap("n", "<Leader>wl", function()
-    print(vim.inspect(vim.lsp.buf.list_workLeader_folders()))
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end)
 
   bufmap("n", "<Leader>rn", vim.lsp.buf.rename)
