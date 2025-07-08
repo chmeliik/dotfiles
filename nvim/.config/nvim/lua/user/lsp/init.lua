@@ -65,7 +65,7 @@ null_ls_register("markdownlint", { "formatting", "diagnostics" })
 null_ls_register("write_good", "diagnostics")
 
 -- JSON
-null_ls_register("fixjson", "formatting")
+setup_server("jsonls")
 
 --#endregion servers
 
