@@ -11,6 +11,7 @@ opt.number = true -- show line numbers
 opt.cursorline = true -- highlight current line
 opt.termguicolors = true -- 24-bit colors
 opt.showmode = false -- shown by status line
+opt.winborder = "rounded" -- rounded floating windows
 
 opt.splitbelow = true -- horizontal splits go below current file
 opt.splitright = true -- vertical splits go to the right of current file
