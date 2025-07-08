@@ -46,7 +46,8 @@ function M.setup_server(server_name, args)
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
     on_attach = M.on_attach,
   })
-  require("lspconfig")[server_name].setup(args)
+  vim.lsp.config(server_name, args)
+  vim.lsp.enable(server_name)
 end
 
 ---@alias null_ls_method
