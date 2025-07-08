@@ -14,7 +14,6 @@ end
 
 try(require, "user.colorscheme")
 try(require, "user.telescope")
-try(require, "user.treesitter")
 try(require, "user.ssr")
 try(require, "user.completion")
 try(require, "user.lsp")

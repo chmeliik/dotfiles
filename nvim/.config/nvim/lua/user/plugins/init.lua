@@ -6,11 +6,6 @@ return {
   "tpope/vim-commentary",
 
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdateSync",
-  },
-
-  {
     "nvim-telescope/telescope.nvim",
     version = "0.1.*",
     dependencies = {
