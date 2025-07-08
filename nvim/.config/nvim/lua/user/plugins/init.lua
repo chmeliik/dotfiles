@@ -3,16 +3,6 @@ return {
   "tpope/vim-repeat",
   "tpope/vim-commentary",
 
-  {
-    "nvim-telescope/telescope.nvim",
-    version = "0.1.*",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    },
-  },
-
   "stevearc/dressing.nvim",
 
   {
