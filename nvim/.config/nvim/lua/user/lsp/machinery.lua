@@ -9,19 +9,6 @@ function M.on_attach(client, bufnr, override_capabilities)
   end
 
   bufmap("n", "K", vim.lsp.buf.hover)
-  bufmap("n", "<A-k>", vim.lsp.buf.signature_help)
-
-  bufmap("n", "<Leader>wa", vim.lsp.buf.add_workspace_folder)
-  bufmap("n", "<Leader>wr", vim.lsp.buf.remove_workspace_folder)
-  bufmap("n", "<Leader>wl", function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end)
-
-  bufmap("n", "<Leader>rn", vim.lsp.buf.rename)
-  bufmap("n", "<Leader>ca", vim.lsp.buf.code_action)
-  bufmap("n", "<Leader>F", function()
-    vim.lsp.buf.format({ async = true })
-  end)
 
   local server_capabilities = vim.tbl_deep_extend(
     "force",
