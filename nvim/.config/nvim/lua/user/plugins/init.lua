@@ -5,32 +5,6 @@ return {
 
   "stevearc/dressing.nvim",
 
-  {
-    "L3MON4D3/LuaSnip",
-    version = "2.*",
-    dependencies = { "rafamadriz/friendly-snippets" },
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-nvim-lsp",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, {
-        name = "lazydev",
-        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-      })
-    end,
-  },
-
-  "windwp/nvim-autopairs",
-
   { "mason-org/mason.nvim" },
   { "mason-org/mason-lspconfig.nvim" },
   "jay-babu/mason-null-ls.nvim",
@@ -41,8 +15,6 @@ return {
     "nvimtools/none-ls.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
-
-  { "folke/lazydev.nvim", ft = "lua", opts = {} },
 
   {
     "iamcco/markdown-preview.nvim",
