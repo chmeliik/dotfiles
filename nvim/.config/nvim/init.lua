@@ -12,7 +12,6 @@ else
   vim.notify(error, vim.log.levels.ERROR)
 end
 
-try(require, "user.colorscheme")
 try(require, "user.telescope")
 try(require, "user.ssr")
 try(require, "user.completion")
