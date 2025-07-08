@@ -4,7 +4,13 @@ require("user.filetype")
 
 local try = require("user.lib").try
 
-try(require, "user.plugins")
+local ok, lazy = pcall(require, "lazy")
+if ok then
+  lazy.setup("user.plugins")
+else
+  local error = tostring(lazy)
+  vim.notify(error, vim.log.levels.ERROR)
+end
 
 try(require, "user.colorscheme")
 try(require, "user.telescope")

@@ -1,4 +1,4 @@
-require("lazy").setup({
+return {
   "rebelot/kanagawa.nvim",
 
   "tpope/vim-surround",
@@ -79,4 +79,4 @@ require("lazy").setup({
       require("mini.align").setup()
     end,
   },
-})
+}
