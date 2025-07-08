@@ -63,7 +63,7 @@ use("jay-babu/mason-null-ls.nvim")
 use("neovim/nvim-lspconfig")
 
 use({
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
 })
 
