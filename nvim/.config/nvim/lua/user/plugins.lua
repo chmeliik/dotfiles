@@ -1,91 +1,82 @@
-local lazy = require("lazy")
+require("lazy").setup({
+  "rebelot/kanagawa.nvim",
 
-local plugins = {}
+  "tpope/vim-surround",
+  "tpope/vim-repeat",
+  "tpope/vim-commentary",
 
----@param plugin_spec LazySpec
-local function use(plugin_spec)
-  table.insert(plugins, { plugin_spec })
-end
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdateSync",
+  },
 
-use("rebelot/kanagawa.nvim")
+  {
+    "nvim-telescope/telescope.nvim",
+    version = "0.1.*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
+  },
 
-use("tpope/vim-surround")
-use("tpope/vim-repeat")
-use("tpope/vim-commentary")
+  "stevearc/dressing.nvim",
 
-use({
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdateSync",
-})
+  {
+    "L3MON4D3/LuaSnip",
+    version = "2.*",
+    dependencies = { "rafamadriz/friendly-snippets" },
+  },
 
-use({
-  "nvim-telescope/telescope.nvim",
-  version = "0.1.*",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "kyazdani42/nvim-web-devicons",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    opts = function(_, opts)
+      opts.sources = opts.sources or {}
+      table.insert(opts.sources, {
+        name = "lazydev",
+        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+      })
+    end,
+  },
+
+  "windwp/nvim-autopairs",
+
+  { "mason-org/mason.nvim" },
+  { "mason-org/mason-lspconfig.nvim" },
+  "jay-babu/mason-null-ls.nvim",
+
+  "neovim/nvim-lspconfig",
+
+  {
+    "nvimtools/none-ls.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  { "folke/lazydev.nvim", ft = "lua", opts = {} },
+
+  "cshuaimin/ssr.nvim",
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+
+  {
+    "echasnovski/mini.align",
+    version = "*",
+    config = function()
+      require("mini.align").setup()
+    end,
   },
 })
-
-use("stevearc/dressing.nvim")
-
-use({
-  "L3MON4D3/LuaSnip",
-  version = "2.*",
-  dependencies = { "rafamadriz/friendly-snippets" },
-})
-
-use({
-  "hrsh7th/nvim-cmp",
-  dependencies = {
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-nvim-lsp",
-    "saadparwaiz1/cmp_luasnip",
-  },
-  opts = function(_, opts)
-    opts.sources = opts.sources or {}
-    table.insert(opts.sources, {
-      name = "lazydev",
-      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-    })
-  end,
-})
-
-use("windwp/nvim-autopairs")
-
-use({ "mason-org/mason.nvim" })
-use({ "mason-org/mason-lspconfig.nvim" })
-use("jay-babu/mason-null-ls.nvim")
-
-use("neovim/nvim-lspconfig")
-
-use({
-  "nvimtools/none-ls.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
-})
-
-use({ "folke/lazydev.nvim", ft = "lua", opts = {} })
-
-use("cshuaimin/ssr.nvim")
-
-use({
-  "iamcco/markdown-preview.nvim",
-  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  ft = { "markdown" },
-  build = function()
-    vim.fn["mkdp#util#install"]()
-  end,
-})
-
-use({
-  "echasnovski/mini.align",
-  version = "*",
-  config = function()
-    require("mini.align").setup()
-  end,
-})
-
-lazy.setup(plugins)
