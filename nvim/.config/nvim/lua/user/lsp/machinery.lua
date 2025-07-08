@@ -1,5 +1,3 @@
-local telescope_builtin = require("telescope.builtin")
-
 local M = {}
 
 ---@param client any
@@ -9,12 +7,6 @@ function M.on_attach(client, bufnr, override_capabilities)
   local function bufmap(mode, lhs, rhs)
     vim.keymap.set(mode, lhs, rhs, { silent = true, buffer = bufnr })
   end
-
-  bufmap("n", "gd", telescope_builtin.lsp_definitions)
-  bufmap("n", "gD", telescope_builtin.lsp_type_definitions)
-  bufmap("n", "gi", telescope_builtin.lsp_implementations)
-  bufmap("n", "gr", telescope_builtin.lsp_references)
-  bufmap("n", "<Leader>D", vim.lsp.buf.declaration)
 
   bufmap("n", "K", vim.lsp.buf.hover)
   bufmap("n", "<A-k>", vim.lsp.buf.signature_help)
