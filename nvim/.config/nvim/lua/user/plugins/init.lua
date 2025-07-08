@@ -44,8 +44,6 @@ return {
 
   { "folke/lazydev.nvim", ft = "lua", opts = {} },
 
-  "cshuaimin/ssr.nvim",
-
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

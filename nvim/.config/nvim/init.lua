@@ -12,6 +12,5 @@ else
   vim.notify(error, vim.log.levels.ERROR)
 end
 
-try(require, "user.ssr")
 try(require, "user.completion")
 try(require, "user.lsp")
