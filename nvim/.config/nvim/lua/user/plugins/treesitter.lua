@@ -4,6 +4,11 @@ return {
   config = function()
     require("nvim-treesitter.configs").setup({
       auto_install = true,
+      ensure_installed = {
+        -- https://codecompanion.olimorris.dev/installation.html#installation
+        "markdown",
+        "markdown_inline",
+      },
       highlight = {
         enable = true,
         disable = { "make", "markdown", "gitcommit", "vim" },
