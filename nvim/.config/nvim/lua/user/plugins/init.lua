@@ -5,17 +5,6 @@ return {
 
   "stevearc/dressing.nvim",
 
-  { "mason-org/mason.nvim" },
-  { "mason-org/mason-lspconfig.nvim" },
-  "jay-babu/mason-null-ls.nvim",
-
-  "neovim/nvim-lspconfig",
-
-  {
-    "nvimtools/none-ls.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
