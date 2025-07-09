@@ -1,5 +1,4 @@
--- Trick lazydev.nvim into importing the Snacks type
--- require("snacks")
+---@module "snacks"
 
 return {
   "folke/snacks.nvim",
