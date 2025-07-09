@@ -1,15 +1,5 @@
 local M = {}
 
----@param server_name string
----@param args table<string, any>?
-function M.setup_server(server_name, args)
-  args = vim.tbl_deep_extend("keep", args or {}, {
-    capabilities = require("cmp_nvim_lsp").default_capabilities(),
-  })
-  vim.lsp.config(server_name, args)
-  vim.lsp.enable(server_name)
-end
-
 ---@alias null_ls_method
 ---| "hover"
 ---| "completion"
