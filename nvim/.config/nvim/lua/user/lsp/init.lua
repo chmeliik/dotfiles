@@ -1,8 +1,3 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-  automatic_installation = { exclude = { "hls" } },
-})
-
 ---@type table<string, vim.lsp.Config>
 local servers = {
   -- Lua
@@ -56,6 +51,17 @@ for server, config in pairs(servers) do
   vim.lsp.enable(server)
 end
 
+local servers_to_install = vim.tbl_filter(function(name)
+  -- Manually manage haskell-language-server via ghcup
+  return name ~= "hls"
+end, vim.tbl_keys(servers))
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = servers_to_install,
+  automatic_enable = false,
+})
+
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
@@ -63,10 +69,15 @@ null_ls.setup({
     null_ls.builtins.formatting.markdownlint,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.write_good,
-  }
+  },
 })
 
 require("mason-null-ls").setup({
-  ensure_installed = { "shellcheck" }, -- for bash-language-server
-  automatic_installation = true,
+  ensure_installed = {
+    "shellcheck", -- for bash-language-server
+    "stylua",
+    "markdownlint",
+    "write_good",
+  },
+  automatic_installation = false,
 })
