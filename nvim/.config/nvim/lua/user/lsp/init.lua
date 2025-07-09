@@ -3,8 +3,6 @@ require("mason-lspconfig").setup({
   automatic_installation = { exclude = { "hls" } },
 })
 
-local null_ls_register = require("user.lsp.machinery").null_ls_register
-
 ---@type table<string, vim.lsp.Config>
 local servers = {
   -- Lua
@@ -58,12 +56,16 @@ for server, config in pairs(servers) do
   vim.lsp.enable(server)
 end
 
-null_ls_register("stylua", "formatting")
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.markdownlint,
+    null_ls.builtins.diagnostics.markdownlint,
+    null_ls.builtins.diagnostics.write_good,
+  }
+})
 
-null_ls_register("markdownlint", { "formatting", "diagnostics" })
-null_ls_register("write_good", "diagnostics")
-
-require("null-ls").setup()
 require("mason-null-ls").setup({
   ensure_installed = { "shellcheck" }, -- for bash-language-server
   automatic_installation = true,
