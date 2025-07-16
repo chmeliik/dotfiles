@@ -14,7 +14,7 @@ return {
     -- Top Pickers & Explorer
     { "<leader>fd", function() Snacks.picker.files() end,                 desc = "Find Files" },
     { "<leader>ls", function() Snacks.picker.buffers() end,               desc = "Buffers" },
-    { "<leader>rg", function() Snacks.picker.grep() end,                  desc = "Grep" },
+    { "<leader>rg", function() Snacks.picker.grep({ hidden = true }) end, desc = "Grep" },
     { "<leader>E",  function() Snacks.explorer() end,                     desc = "File Explorer" },
     -- find
     { "<leader>ff", function() Snacks.picker.smart() end,                 desc = "Smart Find Files" },
