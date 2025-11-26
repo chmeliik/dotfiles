@@ -12,6 +12,9 @@
 [commit]
 	gpgsign = true
 
+[rebase]
+	autoSquash = true
+
 [pull]
 	rebase = true
 
