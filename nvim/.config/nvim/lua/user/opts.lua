@@ -8,6 +8,7 @@ opt.list = true -- show characters used for indentation
 opt.iskeyword:append("-") -- treat '-' as part of words
 
 opt.number = true -- show line numbers
+opt.signcolumn = "number" -- show signs in the number column (errors, git signs etc.)
 opt.cursorline = true -- highlight current line
 opt.termguicolors = true -- 24-bit colors
 opt.showmode = false -- shown by status line
