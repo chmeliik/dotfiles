@@ -1,5 +1,6 @@
 SHELL := /bin/bash
-CONFIG_DIRS := wezterm zsh starship nvim bat ranger ghc kitty ruff mime ncdu direnv mpv
+CONFIG_DIRS := \
+	wezterm zsh starship nvim bat ranger ghc kitty ruff mime ncdu direnv mpv claude
 
 ### Main
 
