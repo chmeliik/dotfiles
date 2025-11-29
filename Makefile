@@ -32,6 +32,17 @@ vim-plugins:
 	git submodule update -- nvim/
 	nvim --headless '+Lazy! restore' '+Lazy! clean' '+qa'
 
+### System-wide
+
+.PHONY: systemwide
+systemwide: swapcaps
+
+.PHONY: swapcaps
+swapcaps:
+	stow swapcaps -t /
+	systemd-hwdb update
+	udevadm trigger
+
 ### Updating
 
 .PHONY: update

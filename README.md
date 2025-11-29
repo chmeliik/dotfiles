@@ -76,5 +76,15 @@ Install everything, including git config and extras, with
 make all
 ```
 
+### System-wide config
+
+Configuration that requires `sudo` lives separately under the `systemwide` target.
+
+Install with:
+
+```shell
+sudo make systemwide
+```
+
 [signingkey]: https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
 [nerd-fonts]: https://github.com/ryanoasis/nerd-fonts
