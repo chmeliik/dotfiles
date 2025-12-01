@@ -1,7 +1,12 @@
 # Swap Caps Lock and Escape keys at evdev level
 # https://wiki.archlinux.org/title/Map_scancodes_to_keycodes
 
-# Match all input devices
-evdev:input:*
- KEYBOARD_KEY_3a=esc       # Caps Lock (scancode 0x3a) -> Escape
- KEYBOARD_KEY_01=capslock  # Escape (scancode 0x01) -> Caps Lock
+# Match laptop/built-in AT keyboards
+evdev:atkbd:*
+ KEYBOARD_KEY_3a=esc
+ KEYBOARD_KEY_01=capslock
+
+# Match USB keyboards (bus 0003 = USB)
+evdev:input:b0003*
+ KEYBOARD_KEY_70039=esc
+ KEYBOARD_KEY_70029=capslock
