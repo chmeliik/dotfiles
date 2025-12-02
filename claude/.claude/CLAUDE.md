@@ -21,3 +21,19 @@
 - Don't use **bold text** as headings, use other Markdown elements to organize text
 - Always leave an empty line around headings, lists, code blocks and other elements
 - Include long URLs in a link table at the end, not inline
+
+## Code
+
+### Bash
+
+- Start scripts with the following header (leave an empty line after):
+
+  ```bash
+  #!/bin/bash
+  set -o errexit -o nounset -o pipefail
+  ```
+
+### GitHub Workflows
+
+- Follow Bash guidelines, but omit the header if the script is trivial
+- Don't use special workflow syntax (e.g. `${{ github.* }}`) inside `run:` scripts
