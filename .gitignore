@@ -1,5 +1,8 @@
 .env
 
+# systemd
+*.target.wants
+
 git/.gitconfig
 
 zsh/.config/zsh/.*
