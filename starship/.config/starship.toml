@@ -10,6 +10,9 @@ use_logical_path = false
 [docker_context]
 disabled = true
 
+[gcloud]
+disabled = true
+
 [git_status]
 format = "([${ahead_behind}${all_status}]($style) )"
 style = "bold purple"
