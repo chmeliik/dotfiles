@@ -5,6 +5,7 @@
 - When committing:
   - Use the 'Assisted-by' trailer instead of 'Co-authored-by'
   - Add a 'Signed-off-by' trailer by using the -s flag
+  - Keep it concise, include the necessary info but no fluff
 
 ## Documentation
 
@@ -37,3 +38,10 @@
 
 - Follow Bash guidelines, but omit the header if the script is trivial
 - Don't use special workflow syntax (e.g. `${{ github.* }}`) inside `run:` scripts
+
+## Tests
+
+- Make tests as declarative as possible. It must be visible at first glance what
+  the test does and what it checks.
+- When checking error messages, make sure the expected strings are specific enough
+  that we can be sure we're getting the expected error.
