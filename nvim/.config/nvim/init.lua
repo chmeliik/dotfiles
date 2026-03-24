@@ -2,6 +2,7 @@ require("user.opts")
 require("user.keymap")
 require("user.filetype")
 require("user.lsp")
+require("user.commands")
 
 local ok, lazy = pcall(require, "lazy")
 if ok then
