@@ -7,6 +7,11 @@
   - Add a 'Signed-off-by' trailer by using the -s flag
   - Keep it concise, include the necessary info but no fluff
 
+## Investigation
+
+- When you need the source code to properly investigate the behavior of a tool,
+  clone the source repo instead of using ad-hoc Fetch/curl calls.
+
 ## Documentation
 
 - Keep it concise, include the necessary info but no fluff
