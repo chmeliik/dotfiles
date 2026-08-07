@@ -1,0 +1,19 @@
+{
+  "enabledPlugins": {
+    "component-build-status@konflux-skills": true,
+    "debugging-pipeline-failures@konflux-skills": true,
+    "navigating-github-to-konflux-pipelines@konflux-skills": true,
+    "understanding-konflux-resources@konflux-skills": true,
+    "working-with-provenance@konflux-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "konflux-skills": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/konflux-ci/skills.git"
+      }
+    }
+  },
+  "editorMode": "vim",
+  "model": "claude-sonnet-5"
+}
